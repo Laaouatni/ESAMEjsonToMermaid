@@ -104,20 +104,39 @@
   });
 </script>
 
-<div class="p-2">
-  {#each Object.entries(wantedMaterie) as [materiaName, isWanted], thisIndex}
-    <div class="flex gap-2">
-      <input
-        type="checkbox"
-        id="MATERIA_{thisIndex}"
-        checked={isWanted}
-        onchange={(e) => {
-          wantedMaterie[materiaName as TypeMaterie] = (e.target as HTMLInputElement)?.checked;
-        }}
-      />
-      <label for="MATERIA_{thisIndex}">{materiaName}</label>
-    </div>
-  {/each}
+<div class="flex justify-around p-2">
+  <div class="p-2">
+    <h2 class="text-2xl font-semibold">Materie:</h2>
+    {#each Object.entries(wantedMaterie) as [materiaName, isWanted], thisIndex}
+      <div class="flex gap-2">
+        <input
+          type="checkbox"
+          id="MATERIA_{thisIndex}"
+          checked={isWanted}
+          onchange={(e) => {
+            wantedMaterie[materiaName as TypeMaterie] = (e.target as HTMLInputElement)?.checked;
+          }}
+        />
+        <label for="MATERIA_{thisIndex}">{materiaName}</label>
+      </div>
+    {/each}
+  </div>
+  <div class="p-2">
+    <h2 class="text-2xl font-semibold">Tematiche:</h2>
+    {#each Object.entries(wantedMaterie) as [materiaName, isWanted], thisIndex}
+      <div class="flex gap-2">
+        <input
+          type="checkbox"
+          id="MATERIA_{thisIndex}"
+          checked={isWanted}
+          onchange={(e) => {
+            wantedMaterie[materiaName as TypeMaterie] = (e.target as HTMLInputElement)?.checked;
+          }}
+        />
+        <label for="MATERIA_{thisIndex}">{materiaName}</label>
+      </div>
+    {/each}
+  </div>
 </div>
 
 <main id="mainElement"></main>
