@@ -27,7 +27,7 @@
       // per ogni materia
       result += myString(`\tsubgraph MATERIA_${thisMateriaIndex}['${thisMateria}']`)
       LISTA_ARGOMENTI[thisMateria].forEach((thisArgomento, thisArgomentoIndex) => {
-        result += myString(`\t\tARGOMENTO_${thisArgomentoIndex}`)
+        result += myString(`\t\tMATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}['${thisArgomento}']`)
 
       })
       result += myString(`\tend`)
