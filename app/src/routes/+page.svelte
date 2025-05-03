@@ -105,7 +105,7 @@
   });
 
   $effect(() => {
-    $inspect("cambiamento", wantedMaterie);
+    $inspect("cambiamento", wantedNucleiTematici);
   });
 </script>
 
@@ -116,29 +116,29 @@
       <div class="flex gap-2">
         <input
           type="checkbox"
-          id="MATERIA_{thisIndex}"
+          id="INPUT_MATERIA_{thisIndex}"
           checked={isWanted}
           onchange={(e) => {
             wantedMaterie[materiaName as TypeMaterie] = (e.target as HTMLInputElement)?.checked;
           }}
         />
-        <label for="MATERIA_{thisIndex}">{materiaName}</label>
+        <label for="INPUT_MATERIA_{thisIndex}">{materiaName}</label>
       </div>
     {/each}
   </div>
   <div class="p-2">
     <h2 class="text-2xl font-semibold">Tematiche:</h2>
-    {#each Object.entries(wantedMaterie) as [materiaName, isWanted], thisIndex}
+    {#each Object.entries(wantedNucleiTematici) as [tematicaName, isWanted], thisIndex}
       <div class="flex gap-2">
         <input
           type="checkbox"
-          id="MATERIA_{thisIndex}"
+          id="INPUT_TEMATICA_{thisIndex}"
           checked={isWanted}
           onchange={(e) => {
-            wantedMaterie[materiaName as TypeMaterie] = (e.target as HTMLInputElement)?.checked;
+            wantedNucleiTematici[tematicaName as TypeNucleiTematici] = (e.target as HTMLInputElement)?.checked;
           }}
         />
-        <label for="MATERIA_{thisIndex}">{materiaName}</label>
+        <label for="INPUT_TEMATICA_{thisIndex}">{tematicaName}</label>
       </div>
     {/each}
   </div>
