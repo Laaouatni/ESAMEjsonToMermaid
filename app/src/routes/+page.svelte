@@ -26,8 +26,9 @@
       indexToGetMateria[thisMateria] = thisIndex;
       // per ogni materia
       result += myString(`\tsubgraph MATERIA_${thisIndex}['${thisMateria}']`)
-      LISTA_ARGOMENTI[thisMateria].forEach((thisArgomento) => {
-        
+      LISTA_ARGOMENTI[thisMateria].forEach((thisArgomento, thisIndex) => {
+        result += myString(`\t\tARGOMENTO_${thisIndex}`)
+
       })
       result += myString(`\tend`)
     })
