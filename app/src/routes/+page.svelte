@@ -12,7 +12,9 @@
     MOTORIA: ["COSTRUZIONE STADIO QATAR 2022"] as const,
     EDUCAZIONE_CIVICA: ["AGENDA 2030", "RICICLO ALLUMINIO", "RAEE"] as const,
   };
+  const LISTA_NUCLEI_TEMATICHE = ["AMBIENTE E ENERGIA", "SALUTE E SICUREZZA", "LAVORO, INDUSTRIA E INNOVAZIONE", "TEMPO"] as const;
 
   type TypeMaterie = keyof typeof LISTA_ARGOMENTI;
   type TypeArgomenti<TypeThisMateria extends TypeMaterie> = typeof LISTA_ARGOMENTI[TypeThisMateria][number];
+  type TypeNucleiTematici = typeof LISTA_NUCLEI_TEMATICHE[number];
 </script>
