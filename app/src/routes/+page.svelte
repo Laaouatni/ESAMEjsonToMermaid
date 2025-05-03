@@ -4,7 +4,7 @@
   import { LISTA_NUCLEI_TEMATICI } from "$lib/constants/listaNucleiTematici";
   import { LISTA_COLLEGAMENTI } from "$lib/constants/listaCollegamenti";
   import mermaid from "mermaid";
-  import type { TypeMaterie } from "$lib/types/typeConstants";
+  import type { TypeMaterie, TypeNucleiTematici } from "$lib/types/typeConstants";
 
   let indentationNumber = 0;
 
@@ -12,10 +12,15 @@
     LISTA_ARGOMENTI,
   ) as TypeMaterie[];
   let wantedMaterie: { [key in TypeMaterie]: boolean } = $state({});
+  let wantedNucleiTematici: { [key in TypeNucleiTematici]: boolean } = $state({});
 
   allMaterie.forEach((thisMateria) => {
     wantedMaterie[thisMateria] = true;
   });
+
+  LISTA_NUCLEI_TEMATICI.forEach((thisNucleoTematico) => {
+    wantedNucleiTematici[thisNucleoTematico] = true;
+  })
 
   function myString(thisString: string) {
     return `${"\t".repeat(indentationNumber)}${thisString}\n`;
