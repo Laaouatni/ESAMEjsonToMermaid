@@ -45,7 +45,7 @@
 
     console.log(thisListaArgomenti)
 
-    // result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
+    result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
     indentationNumber++;
     (Object.keys(wantedNucleiTematici) as TypeNucleiTematici[]).forEach(
       (thisNucleoTematico, thisNucleoTematicoIndex) => {
@@ -55,15 +55,15 @@
       },
     );
     indentationNumber--;
-    // result += myString("end\n");
-    // result += myString("subgraph MATERIE['MATERIE']");
+    result += myString("end\n");
+    result += myString("subgraph MATERIE['MATERIE']");
     indentationNumber++;
     allMaterie.forEach((thisMateria, thisMateriaIndex) => {
       const thisMateriaId = `MATERIA_${thisMateriaIndex}`;
       idToGetMateria[thisMateria] = thisMateriaId;
       result += myString(`subgraph ${thisMateriaId}['${thisMateria}']`);
       indentationNumber++;
-      thisListaArgomenti[thisMateria].forEach(
+      (thisListaArgomenti[thisMateria] || []).forEach(
         (thisArgomento, thisArgomentoIndex) => {
           const thisArgomentoId = `MATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}`;
           idToGetArgomenti[thisArgomento] = thisArgomentoId;
@@ -74,7 +74,7 @@
       result += myString(`end`);
     });
     indentationNumber--;
-    // result += myString("end\n");
+    result += myString("end\n");
     indentationNumber++;
     Object.entries(LISTA_COLLEGAMENTI).forEach(
       ([thisNucleoTematico, thisMaterieDataObject]) => {
