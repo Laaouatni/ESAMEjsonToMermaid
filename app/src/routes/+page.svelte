@@ -4,7 +4,7 @@
   import { LISTA_NUCLEI_TEMATICI } from "$lib/constants/listaNucleiTematici";
   import { LISTA_COLLEGAMENTI } from "$lib/constants/listaCollegamenti";
   import mermaid from "mermaid";
-  import type { TypeMaterie, TypeNucleiTematici } from "$lib/types/typeConstants";
+  import type { TypeMaterie, TypeNucleiTematici, TypeArgomenti } from "$lib/types/typeConstants";
 
   let indentationNumber = 0;
 
@@ -35,7 +35,7 @@
     let idToGetMateria: TypeIdToGet = {};
     let idToGetArgomenti: TypeIdToGet = {};
 
-    const thisListaArgomenti = {};
+    const thisListaArgomenti: {[key in keyof typeof LISTA_ARGOMENTI]: TypeArgomenti<key>} = {};
 
     (Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
       if(wantedMaterie[thisMateria]) return thisMateria;
