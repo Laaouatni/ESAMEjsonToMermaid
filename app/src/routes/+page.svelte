@@ -64,7 +64,7 @@
                   };
                   // result += myString(`${thisIds.argomento}-->|"${thisSpiegazione.replace(/"/g, "'")}"|${thisIds.nucleoTematico}`)
                   result += myString(
-                    `${thisIds.argomento}-->${thisIds.nucleoTematico}`,
+                    `${thisIds.nucleoTematico}-->${thisIds.argomento}`,
                   );
                 });
               },
