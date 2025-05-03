@@ -15,12 +15,17 @@
   let wantedNucleiTematici: { [key in TypeNucleiTematici]: boolean } = $state({});
 
   allMaterie.forEach((thisMateria) => {
-    wantedMaterie[thisMateria] = true;
+    wantedMaterie[thisMateria] = false;
   });
 
+  wantedMaterie["ITALIANO"] = true;
+
   LISTA_NUCLEI_TEMATICI.forEach((thisNucleoTematico) => {
-    wantedNucleiTematici[thisNucleoTematico] = true;
+    wantedNucleiTematici[thisNucleoTematico] = false;
   })
+
+  wantedNucleiTematici["SALUTE E SICUREZZA"] = true;
+  wantedNucleiTematici["LAVORO, INDUSTRIA E INNOVAZIONE"] = true;
 
   function myString(thisString: string) {
     return `${"\t".repeat(indentationNumber)}${thisString}\n`;
@@ -129,14 +134,15 @@
     );
 
     Object.entries(colorIndexesObject).forEach(([thisColor, arrayLinks]) => {
-      result += `linkStyle ${arrayLinks.join(",")} stroke:${thisColor};`;
+      result += myString(`linkStyle ${arrayLinks.join(",")} stroke:${thisColor};`);
     })
 
-    result += `linkStyle default stroke:white, stroke-width:5px;`
+    result += myString(`linkStyle default stroke:white, stroke-width:5px;`);
 
     Object.entries(coloriNucleiTematici).forEach(([thisNucleoTematico,thisColore])=> {
       const thisIdNucleoTematico = idToGetTematica[thisNucleoTematico];
-      result += `style ${thisIdNucleoTematico} fill:${thisColore}, ${thisColore=="yellow"?"color:black" : ""}, font-weight:bold;`
+      if(!thisIdNucleoTematico) return;
+      result += myString(`style ${thisIdNucleoTematico} fill:${thisColore}, ${thisColore=="yellow"?"color:black" : ""}, font-weight:bold;`);
     })
 
     return result;
@@ -145,7 +151,7 @@
   function generateMermaidCollegamenti() {
     (async () => {
       const mermaidString = generateMermaidString();
-      // console.log(mermaidString)
+      console.log(mermaidString)
       const { svg: mainSvg } = await mermaid.render(`mainSvg_${Date.now()}`, mermaidString);
       document.querySelector("#mainElement")!.innerHTML = mainSvg;
     })();
