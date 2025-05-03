@@ -64,7 +64,7 @@
                   };
                   result += myString(
                     // `${thisIds.argomento}---->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
-                    `${thisIds.argomento}---->${thisIds.nucleoTematico}`,
+                    `${thisIds.nucleoTematico}---->${thisIds.argomento}`,
                   );
                   // result += myString(
                   //   `${thisIds.nucleoTematico}-->${thisIds.argomento}`,
