@@ -13,7 +13,7 @@
 
   function generateMermaidString() {
     let result = "";
-    result += myString(`flowchart LR`);
+    result += myString(`flowchart TB`);
     indentationNumber++;
     type TypeIdToGet = { [key: string]: string };
     let idToGetTematica: TypeIdToGet = {};
@@ -63,8 +63,8 @@
                     nucleoTematico: idToGetTematica[thisNucleoTematico],
                   };
                   result += myString(
-                    // `${thisIds.argomento}---->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
-                    `${thisIds.nucleoTematico}---->${thisIds.argomento}`,
+                    `${thisIds.argomento}---->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
+                    // `${thisIds.nucleoTematico}---->${thisIds.argomento}`,
                   );
                   // result += myString(
                   //   `${thisIds.nucleoTematico}-->${thisIds.argomento}`,
