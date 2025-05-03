@@ -111,18 +111,12 @@
                   };
                   result += myString(
                     `${thisIds.argomento}------->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
-                    // `${thisIds.nucleoTematico}---->${thisIds.argomento}`,
                   );
 
                   if(!(colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]])) {
                     colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]] = [];
                   }
                   colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]].push(linkCount)
-
-
-                  // result += myString(
-                  //   `${thisIds.nucleoTematico}-->${thisIds.argomento}`,
-                  // );
 
                   linkCount++;
                 });
@@ -156,8 +150,6 @@
       document.querySelector("#mainElement")!.innerHTML = mainSvg;
     })();
   }
-
-  // console.log(mermaidString);
 
   onMount(async () => {
     mermaid.initialize({
