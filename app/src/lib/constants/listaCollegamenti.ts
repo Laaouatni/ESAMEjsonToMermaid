@@ -52,7 +52,7 @@ const LISTA_COLLEGAMENTI: TypeCollegamenti = {
         "COSTRUZIONE STADIO ECOSOSTENIBILE MONDIALE 2022 QATAR -> Stadio riutilizzabile STADIUM 974, inoltre, rispetto ai altri stadi costruiti questo NON HA BISOGNO DI CONDIZIONATORI",
       ],
     },
-    EDUCAZIONE_CIVICA: {
+    "EDUCAZIONE CIVICA": {
       "AGENDA 2030": [
         "PUNTO 7: ENERGIA PULITA E ACCESSIBILE",
         "PUNTO 11: CITTà E COMUNITà SOSTENIBILI",
@@ -118,7 +118,7 @@ const LISTA_COLLEGAMENTI: TypeCollegamenti = {
         "magari collegandolo con IL CALCIO (sport fa bene alla salute)",
       ],
     },
-    EDUCAZIONE_CIVICA: {
+    "EDUCAZIONE CIVICA": {
       "AGENDA 2030": [
         "PUNTO 2: SCONFIGGERE LA FAME",
         "PUNTO 3: SALUTE E BENESSERE",
@@ -193,7 +193,7 @@ const LISTA_COLLEGAMENTI: TypeCollegamenti = {
         "STADIUM 974: primo stadio che si può smontare facilmente visto che è costruito con containers -> COSTRUZIONE STADIO ECOSOSTENIBILE MONDIALE 2022 QATAR",
       ],
     },
-    EDUCAZIONE_CIVICA: {
+    "EDUCAZIONE CIVICA": {
       "ARTICOLO 1 COSTITUZIONE ITALIANA": [
         "L'Italia è una repubblica fondata sul lavoro, …",
       ],
@@ -272,7 +272,7 @@ const LISTA_COLLEGAMENTI: TypeCollegamenti = {
         "Olimpiadi Berlino '36 Owens ha vinto durante il periodo del Nazismo -> poi parli del vantaggio delle competizioni nazionali come è successo nelle Olimpiadi invernali del 2018 in Korea, nella quale entrambe le koree hanno alzato la stessa bandiera",
       ],
     },
-    EDUCAZIONE_CIVICA: {
+    "EDUCAZIONE CIVICA": {
       "ARTICOLO 9 COSTITUZIONE ITALIANA": [
         "La Repubblica …, e difende il patrimonio storico e artistico",
       ],
