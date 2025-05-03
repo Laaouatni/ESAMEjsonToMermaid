@@ -269,7 +269,7 @@ const LISTA_COLLEGAMENTI: TypeCollegamenti = {
         "Tregua di Natale 1914: PARTITA DI CALCIO TRA SOLDATI",
       ],
       "OLIMPIADI BERLINO DEL '36": [
-        "Olimpiadi Berlino ‘36 Owens ha vinto durante il periodo del Nazismo -> poi parli del vantaggio delle competizioni nazionali come è successo nelle Olimpiadi invernali del 2018 in Korea, nella quale entrambe le koree hanno alzato la stessa bandiera",
+        "Olimpiadi Berlino '36 Owens ha vinto durante il periodo del Nazismo -> poi parli del vantaggio delle competizioni nazionali come è successo nelle Olimpiadi invernali del 2018 in Korea, nella quale entrambe le koree hanno alzato la stessa bandiera",
       ],
     },
     EDUCAZIONE_CIVICA: {
