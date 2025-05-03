@@ -8,7 +8,12 @@
   }
 
   function generateMermaidString() {
-    let result = myString(`flowchart LR\n`)
+    let result = myString(`flowchart LR\n`);
+
+    type TypeIndexToGet = {[key:string]: number};
+    
+    let indexToGetMateria: TypeIndexToGet = {};
+    let indexToGetArgomenti: TypeIndexToGet = {};
 
     // nuclei tematici
     result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
@@ -19,7 +24,6 @@
 
     // materie
     const listaMaterie = Object.keys(LISTA_ARGOMENTI);
-    let indexToGetMateria: {[materia:string]: number} = {}
     
     result += myString("subgraph MATERIE['MATERIE']");
     listaMaterie.forEach((thisMateria, thisMateriaIndex) => {
@@ -27,8 +31,9 @@
       // per ogni materia
       result += myString(`\tsubgraph MATERIA_${thisMateriaIndex}['${thisMateria}']`)
       LISTA_ARGOMENTI[thisMateria].forEach((thisArgomento, thisArgomentoIndex) => {
+        const thisArgomentoId = 
+        indexToGetArgomenti[thisArgomento] = thisArgomentoIndex;
         result += myString(`\t\tMATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}['${thisArgomento}']`)
-
       })
       result += myString(`\tend`)
     })
