@@ -11,7 +11,7 @@
   const allMaterie: TypeMaterie[] = Object.keys(
     LISTA_ARGOMENTI,
   ) as TypeMaterie[];
-  let wantedMaterie: { [key in TypeMaterie]: boolean } = {};
+  let wantedMaterie: { [key in TypeMaterie]: boolean } = $state({});
 
   allMaterie.forEach((thisMateria) => {
     wantedMaterie[thisMateria] = true;
@@ -89,7 +89,7 @@
   }
 
   const mermaidString = generateMermaidString();
-  console.log(mermaidString);
+  // console.log(mermaidString);
 
   onMount(async () => {
     mermaid.initialize({
@@ -98,8 +98,21 @@
     const { svg: mainSvg } = await mermaid.render("mainSvg", mermaidString);
     document.querySelector("#mainElement").innerHTML = mainSvg;
   });
+
+  $effect(() => {
+    $inspect("cambiamento", wantedMaterie)
+  })
 </script>
 
-<div></div>
+<div class="p-2">
+  {#each Object.entries(wantedMaterie) as [materiaName, isWanted], thisIndex}
+    <div class="flex gap-2">
+      <input type="checkbox" id="MATERIA_{thisIndex}" onchange={(e) => {
+        console.log(e.target.checked)
+      }} />
+      <label for="MATERIA_{thisIndex}">{materiaName}</label>
+    </div>
+  {/each}
+</div>
 
 <main id="mainElement"></main>
