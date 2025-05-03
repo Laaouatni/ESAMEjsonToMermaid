@@ -1,7 +1,5 @@
-import type {
-  LISTA_ARGOMENTI,
-  LISTA_NUCLEI_TEMATICI,
-} from "$lib/constants/constants";
+import { LISTA_ARGOMENTI } from "$lib/constants/listaArgomenti";
+import { LISTA_NUCLEI_TEMATICI } from "$lib/constants/listaNucleiTematici";
 
 type TypeMaterie = keyof typeof LISTA_ARGOMENTI;
 type TypeArgomenti<TypeThisMateria extends TypeMaterie> =
