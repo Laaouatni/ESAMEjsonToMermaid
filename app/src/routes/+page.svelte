@@ -34,9 +34,16 @@
     let idToGetTematica: TypeIdToGet = {};
     let idToGetMateria: TypeIdToGet = {};
     let idToGetArgomenti: TypeIdToGet = {};
+
+    const thisListaArgomenti = {};
+
+    console.log((Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
+      if(wantedMaterie[thisMateria]) return thisMateria;
+    }));
+
     // result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
     indentationNumber++;
-    LISTA_NUCLEI_TEMATICI.forEach(
+    (Object.keys(wantedNucleiTematici) as TypeNucleiTematici[]).forEach(
       (thisNucleoTematico, thisNucleoTematicoIndex) => {
         const thisNucleoTematicoId = `TEMATICA_${thisNucleoTematicoIndex}`;
         idToGetTematica[thisNucleoTematico] = thisNucleoTematicoId;
