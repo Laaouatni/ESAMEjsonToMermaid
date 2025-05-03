@@ -24,9 +24,11 @@
     result += myString("subgraph MATERIE['MATERIE']");
     listaMaterie.forEach((thisMateria, thisIndex) => {
       indexToGetMateria[thisMateria] = thisIndex;
-      result += myString(`\tMATERIA_${thisIndex}['${thisMateria}']`)
+      // per ogni materia
+      result += myString(`\tsubgraph MATERIA_${thisIndex}['${thisMateria}']`)
+      result += myString(`\tend`)
     })
-    console.log(indexToGetMateria)
+    // console.log(indexToGetMateria)
     result += myString("end\n");
 
 
@@ -36,6 +38,6 @@
     return result;
   };
 
-  // console.log(generateMermaidString());
-  generateMermaidString();
+  console.log(generateMermaidString());
+  // generateMermaidString();
 </script>
