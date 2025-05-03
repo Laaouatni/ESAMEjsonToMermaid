@@ -58,12 +58,13 @@
             Object.entries(thisMateriaArgomentiObject ?? {}).forEach(
               ([thisArgomento, thisArgomentoSpiegazioniArray]) => {
                 thisArgomentoSpiegazioniArray?.forEach((thisSpiegazione) => {
-                  if (thisSpiegazione == "") return;
                   const thisIds = {
                     argomento: idToGetArgomenti[thisArgomento],
                     nucleoTematico: idToGetTematica[thisNucleoTematico],
                   };
-                  result += myString(`${thisIds.argomento}---->|"${thisSpiegazione.replace(/"/g, "'")}"|${thisIds.nucleoTematico}`)
+                  result += myString(
+                    `${thisIds.argomento}---->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
+                  );
                   // result += myString(
                   //   `${thisIds.nucleoTematico}-->${thisIds.argomento}`,
                   // );
@@ -78,6 +79,7 @@
   }
 
   const mermaidString = generateMermaidString();
+  console.log(mermaidString)
 
   onMount(async () => {
     mermaid.initialize({
