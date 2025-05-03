@@ -208,5 +208,27 @@
         ],
       },
     },
+    "TEMPO": {
+      ITALIANO: {
+        SABA: [
+          "SABA: GOAL. Il calcio (quando si lavora meno ore, si ha più tempo per guardare il calcio)",
+        ],
+        "DORIAN GRAY": [
+          "DORIAN GRAY (libro letto) -> si parla di un ritratto che invecchia al posto del protagonista",
+        ],
+        "GABRIELE D'ANNUNZIO": [
+          "GABRIELE D'ANNUNZIO: 1919 Gabriele D'Annunzio ottiene Fiume… Fiume diventa un luogo di libertà, festa, divertimento e GARE SPORTIVE (quindi hanno tanto tempo libero)",
+        ],
+        UNGARETTI: [
+          "UNGARETTI: SOLDATI (dimostra come la vita dei soldati è molto breve)",
+          "UNGARETTI: 2°FASE POETICA (la prima era quella delle liriche di guerra) Durante la seconda fase ha avuto una crisi religiosa riflettendo sul dolore e il TEMPO scrivendo per esempio il SENTIMENTO DEL TEMPO",
+          "UNGARETTI: VITA D'UOMO - tutte le poesie di ungaretti in un libro (pubblicato dalla Mondadori)",
+          "UNGARETTI: se inizio con storia parlando della partita di calcio (tregua di natale del 1914) potrei collegarla facilmente con NATALE visto che entrambi hanno il sostantivo “NATALE” e poi avvengono nella 1 guerra mondiale (in anni diversi ma sempre nella 1 guerra mondiale)",
+        ],
+        PIRANDELLO: [
+          "PIRANDELLO: NOVELLE PER UN ANNO - Opera scritta ogni giorno per un anno, però purtroppo non conclusa perché muore prima (225/365)",
+        ],
+      }
+    }
   };
 </script>
