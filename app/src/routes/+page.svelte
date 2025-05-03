@@ -45,9 +45,13 @@
       thisListaArgomenti[thisMateria] = LISTA_ARGOMENTI[thisMateria]
     })
 
+    const thisListaNucleiTematici = (Object.keys(wantedNucleiTematici) as TypeNucleiTematici[]).filter((thisNucleoTematico) => {
+      if(wantedNucleiTematici[thisNucleoTematico]) return thisNucleoTematico;
+    })
+
     result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
     indentationNumber++;
-    (Object.keys(wantedNucleiTematici) as TypeNucleiTematici[]).forEach(
+    thisListaNucleiTematici.forEach(
       (thisNucleoTematico, thisNucleoTematicoIndex) => {
         const thisNucleoTematicoId = `TEMATICA_${thisNucleoTematicoIndex}`;
         idToGetTematica[thisNucleoTematico] = thisNucleoTematicoId;
