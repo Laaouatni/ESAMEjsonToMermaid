@@ -156,7 +156,7 @@
   onMount(async () => {
     mermaid.initialize({
       startOnLoad: true,
-      theme:"dark"
+      theme:"dark",
     });
     generateMermaidCollegamenti();
   });
