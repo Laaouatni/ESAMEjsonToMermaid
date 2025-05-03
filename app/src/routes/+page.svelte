@@ -96,7 +96,7 @@
       startOnLoad: true,
     });
     const { svg: mainSvg } = await mermaid.render("mainSvg", mermaidString);
-    document.querySelector("#mainElement").innerHTML = mainSvg;
+    document.querySelector("#mainElement")!.innerHTML = mainSvg;
   });
 
   $effect(() => {
@@ -112,7 +112,7 @@
         id="MATERIA_{thisIndex}"
         checked={isWanted}
         onchange={(e) => {
-          wantedMaterie[materiaName as TypeMaterie] = e.target?.checked;
+          wantedMaterie[materiaName as TypeMaterie] = (e.target as HTMLInputElement)?.checked;
         }}
       />
       <label for="MATERIA_{thisIndex}">{materiaName}</label>
