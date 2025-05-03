@@ -35,13 +35,15 @@
     let idToGetMateria: TypeIdToGet = {};
     let idToGetArgomenti: TypeIdToGet = {};
 
-    const thisListaArgomenti: {[key in keyof typeof LISTA_ARGOMENTI]: TypeArgomenti<key>} = {};
+    const thisListaArgomenti: { [key in TypeMaterie]: TypeArgomenti<TypeMaterie> } = {} as { [key in TypeMaterie]: TypeArgomenti<TypeMaterie> };
 
     (Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
       if(wantedMaterie[thisMateria]) return thisMateria;
     }).forEach((thisMateria) => {
       thisListaArgomenti[thisMateria] = LISTA_ARGOMENTI[thisMateria]
     })
+
+    console.log(thisListaArgomenti)
 
     // result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
     indentationNumber++;
@@ -102,15 +104,21 @@
     return result;
   }
 
-  const mermaidString = generateMermaidString();
+  function generateMermaidCollegamenti() {
+    (async () => {
+      const mermaidString = generateMermaidString();
+      const { svg: mainSvg } = await mermaid.render("mainSvg", mermaidString);
+      document.querySelector("#mainElement")!.innerHTML = mainSvg;
+    })();
+  }
+
   // console.log(mermaidString);
 
   onMount(async () => {
     mermaid.initialize({
       startOnLoad: true,
     });
-    const { svg: mainSvg } = await mermaid.render("mainSvg", mermaidString);
-    document.querySelector("#mainElement")!.innerHTML = mainSvg;
+    generateMermaidCollegamenti();
   });
 
   $effect(() => {
