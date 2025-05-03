@@ -8,8 +8,14 @@
 
   let indentationNumber = 0;
 
-  const allMaterie: TypeMaterie[] = Object.keys(LISTA_ARGOMENTI) as TypeMaterie[];
-  let wantedMaterie: TypeMaterie[] = allMaterie;
+  const allMaterie: TypeMaterie[] = Object.keys(
+    LISTA_ARGOMENTI,
+  ) as TypeMaterie[];
+  let wantedMaterie: { [key in TypeMaterie]: boolean } | {} = {};
+
+  allMaterie.forEach((thisMateria) => {
+    wantedMaterie[thisMateria] = true;
+  });
 
   function myString(thisString: string) {
     return `${"\t".repeat(indentationNumber)}${thisString}\n`;
@@ -84,7 +90,7 @@
   }
 
   const mermaidString = generateMermaidString();
-  console.log(mermaidString)
+  console.log(mermaidString);
 
   onMount(async () => {
     mermaid.initialize({
@@ -95,8 +101,6 @@
   });
 </script>
 
-<div>
-  
-</div>
+<div></div>
 
 <main id="mainElement"></main>
