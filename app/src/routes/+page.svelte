@@ -1,3 +1,202 @@
 <script lang="ts">
-  
+  import { onMount } from "svelte";
+  import { LISTA_ARGOMENTI } from "$lib/constants/listaArgomenti";
+  import { LISTA_NUCLEI_TEMATICI } from "$lib/constants/listaNucleiTematici";
+  import { LISTA_COLLEGAMENTI } from "$lib/constants/listaCollegamenti";
+  import mermaid from "mermaid";
+  import type { TypeMaterie, TypeNucleiTematici, TypeArgomenti } from "$lib/types/typeConstants";
+
+  let indentationNumber = 0;
+
+  const allMaterie: TypeMaterie[] = Object.keys(
+    LISTA_ARGOMENTI,
+  ) as TypeMaterie[];
+  let wantedMaterie: { [key in TypeMaterie]: boolean } = $state({});
+  let wantedNucleiTematici: { [key in TypeNucleiTematici]: boolean } = $state({});
+
+  allMaterie.forEach((thisMateria) => {
+    wantedMaterie[thisMateria] = false;
+  });
+
+  wantedMaterie["ITALIANO"] = true;
+
+  LISTA_NUCLEI_TEMATICI.forEach((thisNucleoTematico) => {
+    wantedNucleiTematici[thisNucleoTematico] = false;
+  })
+
+  wantedNucleiTematici["SALUTE E SICUREZZA"] = true;
+  wantedNucleiTematici["LAVORO, INDUSTRIA E INNOVAZIONE"] = true;
+
+  function myString(thisString: string) {
+    return `${"\t".repeat(indentationNumber)}${thisString}\n`;
+  }
+
+  function generateMermaidString() {
+    let result = "";
+    result += myString(`flowchart LR`);
+    indentationNumber++;
+    type TypeIdToGet = { [key: string]: string };
+    let idToGetTematica: TypeIdToGet = {};
+    let idToGetMateria: TypeIdToGet = {};
+    let idToGetArgomenti: TypeIdToGet = {};
+
+    const thisListaArgomenti: { [key in TypeMaterie]: TypeArgomenti<TypeMaterie>[] } = {};
+
+    const thisWantedMaterie = (Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
+      if(wantedMaterie[thisMateria]) return thisMateria;
+    })
+    
+    thisWantedMaterie.forEach((thisMateria) => {
+      thisListaArgomenti[thisMateria] = LISTA_ARGOMENTI[thisMateria]
+    })
+
+    const thisListaNucleiTematici = (Object.keys(wantedNucleiTematici) as TypeNucleiTematici[]).filter((thisNucleoTematico) => {
+      if(wantedNucleiTematici[thisNucleoTematico]) return thisNucleoTematico;
+    })
+
+    result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
+    indentationNumber++;
+    thisListaNucleiTematici.forEach(
+      (thisNucleoTematico, thisNucleoTematicoIndex) => {
+        const thisNucleoTematicoId = `TEMATICA_${thisNucleoTematicoIndex}`;
+        idToGetTematica[thisNucleoTematico] = thisNucleoTematicoId;
+        result += myString(`${thisNucleoTematicoId}['${thisNucleoTematico}']`);
+      },
+    );
+    indentationNumber--;
+    result += myString("end\n");
+    result += myString("subgraph MATERIE['MATERIE']");
+    indentationNumber++;
+    thisWantedMaterie.forEach((thisMateria, thisMateriaIndex) => {
+      const thisMateriaId = `MATERIA_${thisMateriaIndex}`;
+      idToGetMateria[thisMateria] = thisMateriaId;
+      result += myString(`subgraph ${thisMateriaId}['${thisMateria}']`);
+      indentationNumber++;
+      (thisListaArgomenti[thisMateria] || []).forEach(
+        (thisArgomento, thisArgomentoIndex) => {
+          const thisArgomentoId = `MATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}`;
+          idToGetArgomenti[thisArgomento] = thisArgomentoId;
+          result += myString(`${thisArgomentoId}['${thisArgomento}']`);
+        },
+      );
+      indentationNumber--;
+      result += myString(`end`);
+    });
+    indentationNumber--;
+    result += myString("end\n");
+    indentationNumber++;
+
+    const coloriNucleiTematici: { [key in TypeNucleiTematici]: string} = {
+      "AMBIENTE E ENERGIA": "green",
+      "SALUTE E SICUREZZA": "red",
+      "LAVORO, INDUSTRIA E INNOVAZIONE": "yellow",
+      "TEMPO": "blue",
+    } as const;
+
+    const colorIndexesObject: {[key: string]: number[]} = {};
+    let linkCount:number = 0;
+
+    Object.entries(LISTA_COLLEGAMENTI).forEach(
+      ([thisNucleoTematico, thisMaterieDataObject]) => {
+        if(!(thisListaNucleiTematici.includes(thisNucleoTematico))) return;
+        Object.entries(thisMaterieDataObject).forEach(
+          ([thisMateria, thisMateriaArgomentiObject]) => {
+            if(!(thisWantedMaterie.includes(thisMateria))) return;
+            Object.entries(thisMateriaArgomentiObject ?? {}).forEach(
+              ([thisArgomento, thisArgomentoSpiegazioniArray]) => {
+                thisArgomentoSpiegazioniArray?.forEach((thisSpiegazione) => {
+                  const thisIds = {
+                    argomento: idToGetArgomenti[thisArgomento],
+                    nucleoTematico: idToGetTematica[thisNucleoTematico],
+                  };
+                  result += myString(
+                    `${thisIds.argomento}------->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
+                  );
+
+                  if(!(colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]])) {
+                    colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]] = [];
+                  }
+                  colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]].push(linkCount)
+
+                  linkCount++;
+                });
+              },
+            );
+          },
+        );
+      },
+    );
+
+    Object.entries(colorIndexesObject).forEach(([thisColor, arrayLinks]) => {
+      result += myString(`linkStyle ${arrayLinks.join(",")} stroke:${thisColor};`);
+    })
+
+    result += myString(`linkStyle default stroke:white, stroke-width:5px;`);
+
+    Object.entries(coloriNucleiTematici).forEach(([thisNucleoTematico,thisColore])=> {
+      const thisIdNucleoTematico = idToGetTematica[thisNucleoTematico];
+      if(!thisIdNucleoTematico) return;
+      result += myString(`style ${thisIdNucleoTematico} fill:${thisColore}, ${thisColore=="yellow"?"color:black" : ""}, font-weight:bold;`);
+    })
+
+    return result;
+  }
+
+  function generateMermaidCollegamenti() {
+    (async () => {
+      const mermaidString = generateMermaidString();
+      console.log(mermaidString)
+      const { svg: mainSvg } = await mermaid.render(`mainSvg_${Date.now()}`, mermaidString);
+      document.querySelector("#mainElement")!.innerHTML = mainSvg;
+    })();
+  }
+
+  onMount(async () => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme:"dark",
+    });
+    generateMermaidCollegamenti();
+  });
+
+  $effect(() => {
+    generateMermaidCollegamenti();
+  });
 </script>
+
+<div class="flex justify-around p-2">
+  <div class="p-2">
+    <h2 class="text-2xl font-semibold">Materie:</h2>
+    {#each Object.entries(wantedMaterie) as [materiaName, isWanted], thisIndex}
+      <div class="flex gap-2">
+        <input
+          type="checkbox"
+          id="INPUT_MATERIA_{thisIndex}"
+          checked={isWanted}
+          onchange={(e) => {
+            wantedMaterie[materiaName as TypeMaterie] = (e.target as HTMLInputElement)?.checked;
+          }}
+        />
+        <label for="INPUT_MATERIA_{thisIndex}">{materiaName}</label>
+      </div>
+    {/each}
+  </div>
+  <div class="p-2">
+    <h2 class="text-2xl font-semibold">Tematiche:</h2>
+    {#each Object.entries(wantedNucleiTematici) as [tematicaName, isWanted], thisIndex}
+      <div class="flex gap-2">
+        <input
+          type="checkbox"
+          id="INPUT_TEMATICA_{thisIndex}"
+          checked={isWanted}
+          onchange={(e) => {
+            wantedNucleiTematici[tematicaName as TypeNucleiTematici] = (e.target as HTMLInputElement)?.checked;
+          }}
+        />
+        <label for="INPUT_TEMATICA_{thisIndex}">{tematicaName}</label>
+      </div>
+    {/each}
+  </div>
+</div>
+
+<main id="mainElement" class="bg-black"></main>
