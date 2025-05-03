@@ -12,8 +12,8 @@
 
     // nuclei tematici
     result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
-    LISTA_NUCLEI_TEMATICI.forEach((thisNucleoTematico, thisIndex) => {
-      result += myString(`\tTEMATICA_${thisIndex}['${thisNucleoTematico}']`);
+    LISTA_NUCLEI_TEMATICI.forEach((thisNucleoTematico, thisNucleoTematicoIndex) => {
+      result += myString(`\tTEMATICA_${thisNucleoTematicoIndex}['${thisNucleoTematico}']`);
     })
     result += myString("end\n");
 
@@ -22,12 +22,12 @@
     let indexToGetMateria: {[materia:string]: number} = {}
     
     result += myString("subgraph MATERIE['MATERIE']");
-    listaMaterie.forEach((thisMateria, thisIndex) => {
-      indexToGetMateria[thisMateria] = thisIndex;
+    listaMaterie.forEach((thisMateria, thisMateriaIndex) => {
+      indexToGetMateria[thisMateria] = thisMateriaIndex;
       // per ogni materia
-      result += myString(`\tsubgraph MATERIA_${thisIndex}['${thisMateria}']`)
-      LISTA_ARGOMENTI[thisMateria].forEach((thisArgomento, thisIndex) => {
-        result += myString(`\t\tARGOMENTO_${thisIndex}`)
+      result += myString(`\tsubgraph MATERIA_${thisMateriaIndex}['${thisMateria}']`)
+      LISTA_ARGOMENTI[thisMateria].forEach((thisArgomento, thisArgomentoIndex) => {
+        result += myString(`\t\tARGOMENTO_${thisArgomentoIndex}`)
 
       })
       result += myString(`\tend`)
