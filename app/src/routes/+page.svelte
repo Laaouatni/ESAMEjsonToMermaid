@@ -18,7 +18,7 @@
     let idToGetTematica: TypeIdToGet = {};
     let idToGetMateria: TypeIdToGet = {};
     let idToGetArgomenti: TypeIdToGet = {};
-    result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
+    // result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
     indentationNumber++;
     LISTA_NUCLEI_TEMATICI.forEach(
       (thisNucleoTematico, thisNucleoTematicoIndex) => {
@@ -28,9 +28,9 @@
       },
     );
     indentationNumber--;
-    result += myString("end\n");
+    // result += myString("end\n");
     const listaMaterie = Object.keys(LISTA_ARGOMENTI);
-    result += myString("subgraph MATERIE['MATERIE']");
+    // result += myString("subgraph MATERIE['MATERIE']");
     indentationNumber++;
     listaMaterie.forEach((thisMateria, thisMateriaIndex) => {
       const thisMateriaId = `MATERIA_${thisMateriaIndex}`;
@@ -48,7 +48,7 @@
       result += myString(`end`);
     });
     indentationNumber--;
-    result += myString("end\n");
+    // result += myString("end\n");
     indentationNumber++;
     Object.entries(LISTA_COLLEGAMENTI).forEach(
       ([thisNucleoTematico, thisMaterieDataObject]) => {
@@ -62,10 +62,10 @@
                     argomento: idToGetArgomenti[thisArgomento],
                     nucleoTematico: idToGetTematica[thisNucleoTematico],
                   };
-                  // result += myString(`${thisIds.argomento}-->|"${thisSpiegazione.replace(/"/g, "'")}"|${thisIds.nucleoTematico}`)
-                  result += myString(
-                    `${thisIds.nucleoTematico}-->${thisIds.argomento}`,
-                  );
+                  result += myString(`${thisIds.argomento}--->|"${thisSpiegazione.replace(/"/g, "'")}"|${thisIds.nucleoTematico}`)
+                  // result += myString(
+                  //   `${thisIds.nucleoTematico}-->${thisIds.argomento}`,
+                  // );
                 });
               },
             );
