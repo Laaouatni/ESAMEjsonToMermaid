@@ -9,10 +9,10 @@ type TypeArgomenti<TypeThisMateria extends TypeMaterie> =
 type TypeNucleiTematici = (typeof LISTA_NUCLEI_TEMATICI)[number];
 
 type TypeCollegamenti = {
-  [thisTypeNucleoTematico in TypeNucleiTematici]: {
-    [thisTypeMateria in TypeMaterie]: {
-      [thisTypeArgomento in TypeArgomenti<thisTypeMateria>]: string[];
-    }[];
+  [thisTypeNucleoTematico in TypeNucleiTematici]?: {
+    [thisTypeMateria in TypeMaterie]?: {
+      [thisTypeArgomento in TypeArgomenti<thisTypeMateria>]?: string[];
+    };
   };
 };
 
