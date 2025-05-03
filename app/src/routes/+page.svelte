@@ -35,7 +35,7 @@
     let idToGetMateria: TypeIdToGet = {};
     let idToGetArgomenti: TypeIdToGet = {};
 
-    const thisListaArgomenti: { [key in TypeMaterie]: TypeArgomenti<TypeMaterie> } = {} as { [key in TypeMaterie]: TypeArgomenti<TypeMaterie> };
+    const thisListaArgomenti: { [key in TypeMaterie]: TypeArgomenti<TypeMaterie>[] } = {};
 
     (Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
       if(wantedMaterie[thisMateria]) return thisMateria;
@@ -63,7 +63,7 @@
       idToGetMateria[thisMateria] = thisMateriaId;
       result += myString(`subgraph ${thisMateriaId}['${thisMateria}']`);
       indentationNumber++;
-      LISTA_ARGOMENTI[thisMateria].forEach(
+      thisListaArgomenti[thisMateria].forEach(
         (thisArgomento, thisArgomentoIndex) => {
           const thisArgomentoId = `MATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}`;
           idToGetArgomenti[thisArgomento] = thisArgomentoId;
@@ -107,7 +107,7 @@
   function generateMermaidCollegamenti() {
     (async () => {
       const mermaidString = generateMermaidString();
-      const { svg: mainSvg } = await mermaid.render("mainSvg", mermaidString);
+      const { svg: mainSvg } = await mermaid.render(`mainSvg_${Date.now()}`, mermaidString);
       document.querySelector("#mainElement")!.innerHTML = mainSvg;
     })();
   }
@@ -122,7 +122,9 @@
   });
 
   $effect(() => {
-    $inspect("cambiamento", wantedNucleiTematici);
+    $inspect("cambiamento 1", wantedNucleiTematici);
+    $inspect("cambiamento 2", wantedMaterie);
+    generateMermaidCollegamenti();
   });
 </script>
 
