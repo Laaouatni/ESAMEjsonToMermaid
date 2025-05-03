@@ -278,6 +278,6 @@ const LISTA_COLLEGAMENTI: TypeCollegamenti = {
       ],
     },
   },
-};
+} as const;
 
 export { LISTA_COLLEGAMENTI };

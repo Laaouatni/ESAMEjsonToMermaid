@@ -1,4 +1,4 @@
-const LISTA_ARGOMENTI: {[materia:string]: string[]} = {
+const LISTA_ARGOMENTI = {
   ITALIANO: [
     "MARINETTI",
     "UNGARETTI",

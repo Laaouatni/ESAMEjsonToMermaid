@@ -4,8 +4,12 @@
   import { LISTA_NUCLEI_TEMATICI } from "$lib/constants/listaNucleiTematici";
   import { LISTA_COLLEGAMENTI } from "$lib/constants/listaCollegamenti";
   import mermaid from "mermaid";
+  import type { TypeMaterie } from "$lib/types/typeConstants";
 
   let indentationNumber = 0;
+
+  const allMaterie: TypeMaterie[] = Object.keys(LISTA_ARGOMENTI) as TypeMaterie[];
+  let wantedMaterie: TypeMaterie[] = allMaterie;
 
   function myString(thisString: string) {
     return `${"\t".repeat(indentationNumber)}${thisString}\n`;
@@ -90,5 +94,9 @@
     document.querySelector("#mainElement").innerHTML = mainSvg;
   });
 </script>
+
+<div>
+  
+</div>
 
 <main id="mainElement"></main>
