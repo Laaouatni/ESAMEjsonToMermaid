@@ -27,13 +27,14 @@
     
     result += myString("subgraph MATERIE['MATERIE']");
     listaMaterie.forEach((thisMateria, thisMateriaIndex) => {
+      const thisMateriaId = `MATERIA_${thisMateriaIndex}`
       indexToGetMateria[thisMateria] = thisMateriaIndex;
       // per ogni materia
-      result += myString(`\tsubgraph MATERIA_${thisMateriaIndex}['${thisMateria}']`)
+      result += myString(`\tsubgraph ${thisMateriaId}['${thisMateria}']`)
       LISTA_ARGOMENTI[thisMateria].forEach((thisArgomento, thisArgomentoIndex) => {
-        const thisArgomentoId = 
+        const thisArgomentoId = `MATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}`;
         indexToGetArgomenti[thisArgomento] = thisArgomentoIndex;
-        result += myString(`\t\tMATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}['${thisArgomento}']`)
+        result += myString(`\t\t${thisArgomentoId}['${thisArgomento}']`)
       })
       result += myString(`\tend`)
     })
