@@ -47,11 +47,16 @@
     });
     indentationNumber--;
     result += myString("end\n");
-
     indentationNumber++;
     Object.entries(LISTA_COLLEGAMENTI).forEach(([thisNucleoTematico, thisMaterieDataObject]) => {
       Object.entries(thisMaterieDataObject).forEach(([thisMateria, thisMateriaArgomentiObject]) => {
+        Object.entries(thisMateriaArgomentiObject ?? {}).forEach(([thisArgomento, thisArgomentoSpiegazioniArray]) => {
+          thisArgomentoSpiegazioniArray?.forEach((thisSpiegazione) => {
+            if(thisSpiegazione == "") return;
+            result += myString(`thisArgomento-->|thisSpiegazione|thisNucleoTematico`)
 
+          })
+        })
       })
 
     })
