@@ -208,7 +208,7 @@
         ],
       },
     },
-    "TEMPO": {
+    TEMPO: {
       ITALIANO: {
         SABA: [
           "SABA: GOAL. Il calcio (quando si lavora meno ore, si ha più tempo per guardare il calcio)",
@@ -224,11 +224,60 @@
           "UNGARETTI: 2°FASE POETICA (la prima era quella delle liriche di guerra) Durante la seconda fase ha avuto una crisi religiosa riflettendo sul dolore e il TEMPO scrivendo per esempio il SENTIMENTO DEL TEMPO",
           "UNGARETTI: VITA D'UOMO - tutte le poesie di ungaretti in un libro (pubblicato dalla Mondadori)",
           "UNGARETTI: se inizio con storia parlando della partita di calcio (tregua di natale del 1914) potrei collegarla facilmente con NATALE visto che entrambi hanno il sostantivo “NATALE” e poi avvengono nella 1 guerra mondiale (in anni diversi ma sempre nella 1 guerra mondiale)",
+          "in generale qualsiasi poesia fatta dell'Allegria (Veglia, Natale, Soldati, Sono una creatura) perchè contiene il LUOGO e la data all’inizio di ogni poesia breve -> anche se da preferirsi SONO UNA CREATURA.",
         ],
         PIRANDELLO: [
           "PIRANDELLO: NOVELLE PER UN ANNO - Opera scritta ogni giorno per un anno, però purtroppo non conclusa perché muore prima (225/365)",
         ],
-      }
-    }
+      },
+      STORIA: {
+        "UNITA D'ITALIA": [
+          "Patto di Roma (05/1890) di Crispi: Si passa da 12 ore di lavoro a 8 ore di lavoro… Adesso una persona ha più tempo libero quindi pratica SPORT",
+        ],
+        "PRIMA GUERRA MONDIALE": [
+          "PARTITA DI CALCIO TRA SOLDATI (tregua di natale)",
+        ],
+        NAZISMO: [
+          "Posso partire dallo SPORT come attività che si esegue nel tempo libero -> collegandola al CALCIO ma anche alle Olimpiadi come quelle del ‘36 di Berlino -> NAZISMO",
+        ],
+        FASCISMO: [
+          "IL FASCISMO però partendo dal fatto che GABRIELE D'ANNUNZIO conquista fiume (diventa luogo di libertà, divertimento, sport) dopo i fallimenti di Orlando e Sonnino… successivamente collego 5° GOVERNO DI GIOLITTI che aveva una politica estera realista, di conseguenza, aveva mandato via Gabriele D'Annunzio senza spargimento di sangue",
+        ],
+      },
+      MATEMATICA: {
+        "CRESCITA POPOLAZIONE BATTERI": [""],
+        "CURVA DI WIDMARK": [""],
+        "SOMMINISTRAZIONE DI UN FARMACO NEL SANGUE": [""],
+        "DERIVATA PRIMA=VELOCITA, DERIVATA SECONDA=ACCELERAZIONE": [
+          "In realtà molto interessante sarebbe parlare del fatto che LE DERIVATE PRIME O DI SECONDA equivalgono alla VELOCITà e all'ACCELERAZIONE, infatti quando la DERIVATA PRIMA=0 abbiamo un punto stazionario e di conseguenza la velocità equivale 0.",
+        ],
+      },
+      INGLESE: {
+        "MANUFACTURING OPERATIONS": [
+          "LATHE, MILLING OPERATIONS and so on… -> hanno bisogno di tempo per lavorare e il CNC semplifica e velocizza i tempi.",
+        ],
+      },
+      MECCANICA: {
+        "STORIA DELLA QUALITA": [
+          "partendo dai babilonesi, passando per il medioevo, fino alla prima guerra mondiale (Armi) e poi anche ISO",
+        ],
+      },
+      MOTORIA: {
+        "COSTRUZIONE STADIO QATAR 2022": [
+          "In una società in cui si ha sempre più tempo, nasce il calcio, di conseguenza gli stadi -> COSTRUZIONE STADIO ECOSOSTENIBILE MONDIALE 2022 QATAR",
+        ],
+        "PARTITA DI CALCIO DEL NATALE 1914": [
+          "Tregua di Natale 1914: PARTITA DI CALCIO TRA SOLDATI",
+        ],
+        "OLIMPIADI BERLINO DEL '36": [
+          "Olimpiadi Berlino ‘36 Owens ha vinto durante il periodo del Nazismo -> poi parli del vantaggio delle competizioni nazionali come è successo nelle Olimpiadi invernali del 2018 in Korea, nella quale entrambe le koree hanno alzato la stessa bandiera",
+        ],
+      },
+      EDUCAZIONE_CIVICA: {
+        "ARTICOLO 9 COSTITUZIONE ITALIANA": [
+          "La Repubblica …, e difende il patrimonio storico e artistico",
+        ],
+      },
+    },
   };
 </script>
