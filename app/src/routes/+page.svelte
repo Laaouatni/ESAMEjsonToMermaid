@@ -28,7 +28,7 @@
 
   function generateMermaidString() {
     let result = "";
-    result += myString(`flowchart TB`);
+    result += myString(`flowchart LR`);
     indentationNumber++;
     type TypeIdToGet = { [key: string]: string };
     let idToGetTematica: TypeIdToGet = {};
