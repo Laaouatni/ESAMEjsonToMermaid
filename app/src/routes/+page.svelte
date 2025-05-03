@@ -1,53 +1,54 @@
 <script lang="ts">
-	import { LISTA_ARGOMENTI } from '$lib/constants/listaArgomenti';
-	import { LISTA_NUCLEI_TEMATICI } from '$lib/constants/listaNucleiTematici';
+  import { LISTA_ARGOMENTI } from "$lib/constants/listaArgomenti";
+  import { LISTA_NUCLEI_TEMATICI } from "$lib/constants/listaNucleiTematici";
   import { LISTA_COLLEGAMENTI } from "$lib/constants/listaCollegamenti";
 
+  let indentationNumber = 0;
+
   function myString(thisString: string) {
-    return `${thisString}\n`;
+    return `${"\t".repeat(indentationNumber)}${thisString}\n`;
   }
 
   function generateMermaidString() {
-    let result = myString(`flowchart LR\n`);
-
-    type TypeIndexToGet = {[key:string]: number};
-    
-    let indexToGetMateria: TypeIndexToGet = {};
-    let indexToGetArgomenti: TypeIndexToGet = {};
-
-    // nuclei tematici
+    let result = myString(`flowchart LR`);
+    indentationNumber++;
+    type TypeIdToGet = { [key: string]: string };
+    let idToGetTematica: TypeIdToGet = {};
+    let idToGetMateria: TypeIdToGet = {};
+    let idToGetArgomenti: TypeIdToGet = {};
     result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
-    LISTA_NUCLEI_TEMATICI.forEach((thisNucleoTematico, thisNucleoTematicoIndex) => {
-      result += myString(`\tTEMATICA_${thisNucleoTematicoIndex}['${thisNucleoTematico}']`);
-    })
+    indentationNumber++;
+    LISTA_NUCLEI_TEMATICI.forEach(
+      (thisNucleoTematico, thisNucleoTematicoIndex) => {
+        const thisNucleoTematicoId = `TEMATICA_${thisNucleoTematicoIndex}`;
+        idToGetTematica[thisNucleoTematico] = thisNucleoTematicoId;
+        result += myString(`${thisNucleoTematicoId}['${thisNucleoTematico}']`);
+      },
+    );
+    indentationNumber--;
     result += myString("end\n");
-
-    // materie
     const listaMaterie = Object.keys(LISTA_ARGOMENTI);
-    
     result += myString("subgraph MATERIE['MATERIE']");
+    indentationNumber++;
     listaMaterie.forEach((thisMateria, thisMateriaIndex) => {
-      const thisMateriaId = `MATERIA_${thisMateriaIndex}`
-      indexToGetMateria[thisMateria] = thisMateriaIndex;
-      // per ogni materia
-      result += myString(`\tsubgraph ${thisMateriaId}['${thisMateria}']`)
-      LISTA_ARGOMENTI[thisMateria].forEach((thisArgomento, thisArgomentoIndex) => {
-        const thisArgomentoId = `MATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}`;
-        indexToGetArgomenti[thisArgomento] = thisArgomentoIndex;
-        result += myString(`\t\t${thisArgomentoId}['${thisArgomento}']`)
-      })
-      result += myString(`\tend`)
-    })
-    // console.log(indexToGetMateria)
+      const thisMateriaId = `MATERIA_${thisMateriaIndex}`;
+      idToGetMateria[thisMateria] = thisMateriaId;
+      result += myString(`subgraph ${thisMateriaId}['${thisMateria}']`);
+      indentationNumber++;
+      LISTA_ARGOMENTI[thisMateria].forEach(
+        (thisArgomento, thisArgomentoIndex) => {
+          const thisArgomentoId = `MATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}`;
+          idToGetArgomenti[thisArgomento] = thisArgomentoId;
+          result += myString(`${thisArgomentoId}['${thisArgomento}']`);
+        },
+      );
+      indentationNumber--;
+      result += myString(`end`);
+    });
+    indentationNumber--;
     result += myString("end\n");
-
-
-
-
-
     return result;
-  };
+  }
 
   console.log(generateMermaidString());
-  // generateMermaidString();
 </script>
