@@ -22,13 +22,6 @@
     wantedNucleiTematici[thisNucleoTematico] = true;
   })
 
-  const coloriNucleiTematici: { [key in TypeNucleiTematici]: string} = {
-    "AMBIENTE E ENERGIA": "green",
-    "SALUTE E SICUREZZA": "yellow",
-    "LAVORO, INDUSTRIA E INNOVAZIONE": "orange",
-    "TEMPO": "blue",
-  } as const;
-
   function myString(thisString: string) {
     return `${"\t".repeat(indentationNumber)}${thisString}\n`;
   }
@@ -88,6 +81,13 @@
     result += myString("end\n");
     indentationNumber++;
 
+    const coloriNucleiTematici: { [key in TypeNucleiTematici]: string} = {
+    "AMBIENTE E ENERGIA": "green",
+    "SALUTE E SICUREZZA": "yellow",
+    "LAVORO, INDUSTRIA E INNOVAZIONE": "orange",
+    "TEMPO": "blue",
+  } as const;
+
     const colorIndexesObject: {[key: string]: number[]} = {
       green: [],
       yellow: [],
@@ -131,7 +131,7 @@
     );
 
     Object.entries(colorIndexesObject).forEach(([thisColor, arrayLinks]) => {
-      result += `linkStyle ${arrayLinks.join(",")} stroke:${thisColor}; stroke-width:2px;`;
+      result += `linkStyle ${arrayLinks.join(",")} stroke:${thisColor};`;
     })
 
     return result;
