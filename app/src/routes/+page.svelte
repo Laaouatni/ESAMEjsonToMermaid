@@ -11,7 +11,7 @@
   const allMaterie: TypeMaterie[] = Object.keys(
     LISTA_ARGOMENTI,
   ) as TypeMaterie[];
-  let wantedMaterie: { [key in TypeMaterie]: boolean } | {} = {};
+  let wantedMaterie: { [key in TypeMaterie]: boolean } = {};
 
   allMaterie.forEach((thisMateria) => {
     wantedMaterie[thisMateria] = true;
