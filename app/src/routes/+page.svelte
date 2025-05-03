@@ -34,6 +34,33 @@
           "Una volta crollata in america la borsa di Wall Street anche l’italia risente le conseguenze e di conseguenza lo stato italiano fascista diventa imprenditore proteggendo Fiat e EDISON (energia).",
         ],
       },
+      MATEMATICA: {
+        "CURVA DI KEELING": [
+          "Dopo la prima rivoluzione industriale si aggiunge al “respiro della terra” anche un processo di origine antropica (umana) rendendo la funzione ESPONENZIALE CICLICA"
+        ]
+      },
+      INGLESE: {
+        "FONTI RINNOVABILI E NON RINNOVABILI": [""]
+      },
+      MECCANICA: {
+        "ADDITIVE MANUFACTURING": ["ADDITIVE MANUFACTURING non crea trucioli quindi è ECOSOSTENIBILE"],
+        "TRATTAMENTI TERMICI": ["TRATTAMENTI TERMICI richiedono ENERGIA"],
+      },
+      MOTORIA: {
+        "COSTRUZIONE STADIO QATAR 2022": ["COSTRUZIONE STADIO ECOSOSTENIBILE MONDIALE 2022 QATAR -> Stadio riutilizzabile STADIUM 974, inoltre, rispetto ai altri stadi costruiti questo NON HA BISOGNO DI CONDIZIONATORI"]
+      },
+      EDUCAZIONE_CIVICA: {
+        "AGENDA 2030": [
+          "PUNTO 7: ENERGIA PULITA E ACCESSIBILE",
+          "PUNTO 11: CITTà E COMUNITà SOSTENIBILI",
+          "PUNTO 12: CONSUMO E PRODUZIONE RESPONSABILI",
+          "PUNTO 13: LOTTA CONTRO IL CAMBIAMENTO CLIMATICO",
+          "PUNTO 14: VITA SOTT'ACQUA",
+          "PUNTO 15: VITA SULLA TERRA",
+        ],
+        "RICICLO ALLUMINIO": ["powerpoint grossi"],
+        "RAEE": ["RAEE (RIFIUTI ELETTRICI) - Polito Powerpoint"]
+      }
     },
   };
 </script>
