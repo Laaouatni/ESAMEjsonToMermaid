@@ -64,6 +64,6 @@ const LISTA_ARGOMENTI = {
     "ARTICOLO 9 COSTITUZIONE ITALIANA",
     "SICUREZZA TRIPODI",
   ] as const,
-} as const;
+};
 
 export { LISTA_ARGOMENTI };

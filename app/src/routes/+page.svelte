@@ -40,10 +40,9 @@
     );
     indentationNumber--;
     // result += myString("end\n");
-    const listaMaterie = Object.keys(LISTA_ARGOMENTI);
     // result += myString("subgraph MATERIE['MATERIE']");
     indentationNumber++;
-    listaMaterie.forEach((thisMateria, thisMateriaIndex) => {
+    allMaterie.forEach((thisMateria, thisMateriaIndex) => {
       const thisMateriaId = `MATERIA_${thisMateriaIndex}`;
       idToGetMateria[thisMateria] = thisMateriaId;
       result += myString(`subgraph ${thisMateriaId}['${thisMateria}']`);
