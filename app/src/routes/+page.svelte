@@ -22,6 +22,13 @@
     wantedNucleiTematici[thisNucleoTematico] = true;
   })
 
+  const coloriNucleiTematici: { [key in TypeNucleiTematici]: string} = {
+    "AMBIENTE E ENERGIA": "green",
+    "SALUTE E SICUREZZA": "yellow",
+    "LAVORO, INDUSTRIA E INNOVAZIONE": "orange",
+    "TEMPO": "blue",
+  }
+
   function myString(thisString: string) {
     return `${"\t".repeat(indentationNumber)}${thisString}\n`;
   }
@@ -79,6 +86,7 @@
     });
     indentationNumber--;
     result += myString("end\n");
+    result+=myString("linkStyle");
     indentationNumber++;
     Object.entries(LISTA_COLLEGAMENTI).forEach(
       ([thisNucleoTematico, thisMaterieDataObject]) => {
