@@ -47,6 +47,15 @@
     });
     indentationNumber--;
     result += myString("end\n");
+
+    indentationNumber++;
+    Object.entries(LISTA_COLLEGAMENTI).forEach(([thisNucleoTematico, thisMaterieDataObject]) => {
+      Object.entries(thisMaterieDataObject).forEach(([thisMateria, thisMateriaArgomentiObject]) => {
+
+      })
+
+    })
+
     return result;
   }
 
