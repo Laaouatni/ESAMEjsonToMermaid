@@ -27,7 +27,7 @@
     "SALUTE E SICUREZZA": "yellow",
     "LAVORO, INDUSTRIA E INNOVAZIONE": "orange",
     "TEMPO": "blue",
-  }
+  } as const;
 
   function myString(thisString: string) {
     return `${"\t".repeat(indentationNumber)}${thisString}\n`;
@@ -86,8 +86,16 @@
     });
     indentationNumber--;
     result += myString("end\n");
-    result+=myString("linkStyle");
     indentationNumber++;
+
+    const colorIndexesObject: {[key: string]: number[]} = {
+      green: [],
+      yellow: [],
+      orange: [],
+      blue: []
+    };
+    let linkCount:number = 0;
+
     Object.entries(LISTA_COLLEGAMENTI).forEach(
       ([thisNucleoTematico, thisMaterieDataObject]) => {
         if(!(thisListaNucleiTematici.includes(thisNucleoTematico))) return;
@@ -105,9 +113,15 @@
                     `${thisIds.argomento}---->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
                     // `${thisIds.nucleoTematico}---->${thisIds.argomento}`,
                   );
+
+                  colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]].push(linkCount)
+
+
                   // result += myString(
                   //   `${thisIds.nucleoTematico}-->${thisIds.argomento}`,
                   // );
+
+                  linkCount++;
                 });
               },
             );
@@ -115,13 +129,16 @@
         );
       },
     );
+
+    console.log(colorIndexesObject)
+
     return result;
   }
 
   function generateMermaidCollegamenti() {
     (async () => {
       const mermaidString = generateMermaidString();
-      console.log(mermaidString)
+      // console.log(mermaidString)
       const { svg: mainSvg } = await mermaid.render(`mainSvg_${Date.now()}`, mermaidString);
       document.querySelector("#mainElement")!.innerHTML = mainSvg;
     })();
