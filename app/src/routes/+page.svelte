@@ -82,8 +82,10 @@
     indentationNumber++;
     Object.entries(LISTA_COLLEGAMENTI).forEach(
       ([thisNucleoTematico, thisMaterieDataObject]) => {
+        if(!(thisListaNucleiTematici.includes(thisNucleoTematico))) return;
         Object.entries(thisMaterieDataObject).forEach(
           ([thisMateria, thisMateriaArgomentiObject]) => {
+            if(!(thisWantedMaterie.includes(thisMateria))) return;
             Object.entries(thisMateriaArgomentiObject ?? {}).forEach(
               ([thisArgomento, thisArgomentoSpiegazioniArray]) => {
                 thisArgomentoSpiegazioniArray?.forEach((thisSpiegazione) => {
