@@ -130,7 +130,9 @@
       },
     );
 
-    console.log(colorIndexesObject)
+    Object.entries(colorIndexesObject).forEach(([thisColor, arrayLinks]) => {
+      result += `linkStyle ${arrayLinks.join(",")} stroke:${thisColor}; stroke-width:2px;`;
+    })
 
     return result;
   }
