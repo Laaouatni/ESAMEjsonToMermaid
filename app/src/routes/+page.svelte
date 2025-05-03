@@ -1,3 +1,4 @@
 <script lang="ts">
-  
+  type TypeItaliano = "MARINETTI" | "UNGARETTI" | "PASCOLI" | "GABRIELE D'ANNUNZIO";
+  type TypeStoria = "SECONDA RIVOLUZIONE INDUSTRIALE" | "FASCISMO" | "CROLLO DELLA BORSA DI WALL STREET"
 </script>
