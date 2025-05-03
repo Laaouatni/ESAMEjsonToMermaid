@@ -82,18 +82,13 @@
     indentationNumber++;
 
     const coloriNucleiTematici: { [key in TypeNucleiTematici]: string} = {
-    "AMBIENTE E ENERGIA": "green",
-    "SALUTE E SICUREZZA": "yellow",
-    "LAVORO, INDUSTRIA E INNOVAZIONE": "orange",
-    "TEMPO": "blue",
-  } as const;
+      "AMBIENTE E ENERGIA": "green",
+      "SALUTE E SICUREZZA": "red",
+      "LAVORO, INDUSTRIA E INNOVAZIONE": "yellow",
+      "TEMPO": "blue",
+    } as const;
 
-    const colorIndexesObject: {[key: string]: number[]} = {
-      green: [],
-      yellow: [],
-      orange: [],
-      blue: []
-    };
+    const colorIndexesObject: {[key: string]: number[]} = {};
     let linkCount:number = 0;
 
     Object.entries(LISTA_COLLEGAMENTI).forEach(
@@ -114,6 +109,9 @@
                     // `${thisIds.nucleoTematico}---->${thisIds.argomento}`,
                   );
 
+                  if(!(colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]])) {
+                    colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]] = [];
+                  }
                   colorIndexesObject[coloriNucleiTematici[thisNucleoTematico as TypeNucleiTematici]].push(linkCount)
 
 
@@ -134,6 +132,13 @@
       result += `linkStyle ${arrayLinks.join(",")} stroke:${thisColor};`;
     })
 
+    result += `linkStyle default stroke:white, stroke-width:5px;`
+
+    Object.entries(coloriNucleiTematici).forEach(([thisNucleoTematico,thisColore])=> {
+      const thisIdNucleoTematico = idToGetTematica[thisNucleoTematico];
+      result += `style ${thisIdNucleoTematico} fill:${thisColore}, ${thisColore=="yellow"?"color:black" : ""}, font-weight:bold;`
+    })
+
     return result;
   }
 
@@ -151,6 +156,7 @@
   onMount(async () => {
     mermaid.initialize({
       startOnLoad: true,
+      theme:"dark"
     });
     generateMermaidCollegamenti();
   });
@@ -195,4 +201,4 @@
   </div>
 </div>
 
-<main id="mainElement"></main>
+<main id="mainElement" class="bg-black"></main>
