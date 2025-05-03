@@ -13,13 +13,7 @@
     EDUCAZIONE_CIVICA: ["AGENDA 2030", "RICICLO ALLUMINIO", "RAEE"] as const,
   };
 
-  type TypeArgomentiItaliano = typeof LISTA_ARGOMENTI.ITALIANO[number];
-  type TypeArgomentiStoria = typeof LISTA_ARGOMENTI.STORIA[number];
-  type TypeArgomentiMatematica = typeof LISTA_ARGOMENTI.MATEMATICA[number];
-  type TypeArgomentiInglese = typeof LISTA_ARGOMENTI.INGLESE[number];
-  type TypeArgomentiMeccanica = typeof LISTA_ARGOMENTI.MECCANICA[number];
-  type TypeArgomentiMotoria = typeof LISTA_ARGOMENTI.MOTORIA[number];
-  type TypeArgomentiEducazioneCivica = typeof LISTA_ARGOMENTI.EDUCAZIONE_CIVICA[number];
-
   type TypeMaterie = keyof typeof LISTA_ARGOMENTI;
+
+  type TypeArgomenti<TypeThisMateria extends TypeMaterie> = typeof LISTA_ARGOMENTI[TypeThisMateria][number];
 </script>
