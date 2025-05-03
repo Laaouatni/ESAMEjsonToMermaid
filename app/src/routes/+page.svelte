@@ -1,7 +1,9 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import { LISTA_ARGOMENTI } from "$lib/constants/listaArgomenti";
   import { LISTA_NUCLEI_TEMATICI } from "$lib/constants/listaNucleiTematici";
   import { LISTA_COLLEGAMENTI } from "$lib/constants/listaCollegamenti";
+  import mermaid from "mermaid";
 
   let indentationNumber = 0;
 
@@ -48,25 +50,41 @@
     indentationNumber--;
     result += myString("end\n");
     indentationNumber++;
-    Object.entries(LISTA_COLLEGAMENTI).forEach(([thisNucleoTematico, thisMaterieDataObject]) => {
-      Object.entries(thisMaterieDataObject).forEach(([thisMateria, thisMateriaArgomentiObject]) => {
-        Object.entries(thisMateriaArgomentiObject ?? {}).forEach(([thisArgomento, thisArgomentoSpiegazioniArray]) => {
-          thisArgomentoSpiegazioniArray?.forEach((thisSpiegazione) => {
-            if(thisSpiegazione == "") return;
-            const thisIds = {
-              argomento: idToGetArgomenti[thisArgomento],
-              nucleoTematico: idToGetTematica[thisNucleoTematico]
-            }
-            // result += myString(`${thisIds.argomento}-->|"${thisSpiegazione.replace(/"/g, "'")}"|${thisIds.nucleoTematico}`)
-            result += myString(`${thisIds.argomento}-->${thisIds.nucleoTematico}`)
-          })
-        })
-      })
-
-    })
-
+    Object.entries(LISTA_COLLEGAMENTI).forEach(
+      ([thisNucleoTematico, thisMaterieDataObject]) => {
+        Object.entries(thisMaterieDataObject).forEach(
+          ([thisMateria, thisMateriaArgomentiObject]) => {
+            Object.entries(thisMateriaArgomentiObject ?? {}).forEach(
+              ([thisArgomento, thisArgomentoSpiegazioniArray]) => {
+                thisArgomentoSpiegazioniArray?.forEach((thisSpiegazione) => {
+                  if (thisSpiegazione == "") return;
+                  const thisIds = {
+                    argomento: idToGetArgomenti[thisArgomento],
+                    nucleoTematico: idToGetTematica[thisNucleoTematico],
+                  };
+                  // result += myString(`${thisIds.argomento}-->|"${thisSpiegazione.replace(/"/g, "'")}"|${thisIds.nucleoTematico}`)
+                  result += myString(
+                    `${thisIds.argomento}-->${thisIds.nucleoTematico}`,
+                  );
+                });
+              },
+            );
+          },
+        );
+      },
+    );
     return result;
   }
 
-  console.log(generateMermaidString());
+  const mermaidString = generateMermaidString();
+
+  onMount(async () => {
+    mermaid.initialize({
+      startOnLoad: true,
+    });
+    const { svg: mainSvg } = await mermaid.render("mainSvg", mermaidString);
+    document.querySelector("#mainElement").innerHTML = mainSvg;
+  });
 </script>
+
+<main id="mainElement"></main>
