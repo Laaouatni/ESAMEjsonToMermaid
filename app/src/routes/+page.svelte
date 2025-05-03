@@ -100,16 +100,21 @@
   });
 
   $effect(() => {
-    $inspect("cambiamento", wantedMaterie)
-  })
+    $inspect("cambiamento", wantedMaterie);
+  });
 </script>
 
 <div class="p-2">
   {#each Object.entries(wantedMaterie) as [materiaName, isWanted], thisIndex}
     <div class="flex gap-2">
-      <input type="checkbox" id="MATERIA_{thisIndex}" checked={isWanted} onchange={(e) => {
-        wantedMaterie[materiaName] = e.target.checked
-      }} />
+      <input
+        type="checkbox"
+        id="MATERIA_{thisIndex}"
+        checked={isWanted}
+        onchange={(e) => {
+          wantedMaterie[materiaName as TypeMaterie] = e.target?.checked;
+        }}
+      />
       <label for="MATERIA_{thisIndex}">{materiaName}</label>
     </div>
   {/each}
