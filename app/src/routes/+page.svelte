@@ -37,9 +37,11 @@
 
     const thisListaArgomenti = {};
 
-    console.log((Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
+    (Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
       if(wantedMaterie[thisMateria]) return thisMateria;
-    }));
+    }).forEach((thisMateria) => {
+      thisListaArgomenti[thisMateria] = LISTA_ARGOMENTI[thisMateria]
+    })
 
     // result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
     indentationNumber++;
