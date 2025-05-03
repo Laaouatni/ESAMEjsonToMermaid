@@ -14,6 +14,5 @@
   };
 
   type TypeMaterie = keyof typeof LISTA_ARGOMENTI;
-
   type TypeArgomenti<TypeThisMateria extends TypeMaterie> = typeof LISTA_ARGOMENTI[TypeThisMateria][number];
 </script>
