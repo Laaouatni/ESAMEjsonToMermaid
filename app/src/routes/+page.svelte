@@ -37,13 +37,13 @@
 
     const thisListaArgomenti: { [key in TypeMaterie]: TypeArgomenti<TypeMaterie>[] } = {};
 
-    (Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
+    const thisWantedMaterie = (Object.keys(wantedMaterie) as TypeMaterie[]).filter((thisMateria) => {
       if(wantedMaterie[thisMateria]) return thisMateria;
-    }).forEach((thisMateria) => {
+    })
+    
+    thisWantedMaterie.forEach((thisMateria) => {
       thisListaArgomenti[thisMateria] = LISTA_ARGOMENTI[thisMateria]
     })
-
-    console.log(thisListaArgomenti)
 
     result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
     indentationNumber++;
@@ -58,7 +58,7 @@
     result += myString("end\n");
     result += myString("subgraph MATERIE['MATERIE']");
     indentationNumber++;
-    allMaterie.forEach((thisMateria, thisMateriaIndex) => {
+    thisWantedMaterie.forEach((thisMateria, thisMateriaIndex) => {
       const thisMateriaId = `MATERIA_${thisMateriaIndex}`;
       idToGetMateria[thisMateria] = thisMateriaId;
       result += myString(`subgraph ${thisMateriaId}['${thisMateria}']`);
