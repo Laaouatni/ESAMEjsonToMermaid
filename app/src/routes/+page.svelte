@@ -105,7 +105,7 @@
                     nucleoTematico: idToGetTematica[thisNucleoTematico],
                   };
                   result += myString(
-                    `${thisIds.argomento}---->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
+                    `${thisIds.argomento}------->${thisSpiegazione == "" ? "" : `|"${thisSpiegazione.replace(/"/g, "'")}"|`}${thisIds.nucleoTematico}`,
                     // `${thisIds.nucleoTematico}---->${thisIds.argomento}`,
                   );
 
