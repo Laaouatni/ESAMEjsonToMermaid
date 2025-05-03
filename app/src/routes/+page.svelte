@@ -107,6 +107,7 @@
   function generateMermaidCollegamenti() {
     (async () => {
       const mermaidString = generateMermaidString();
+      console.log(mermaidString)
       const { svg: mainSvg } = await mermaid.render(`mainSvg_${Date.now()}`, mermaidString);
       document.querySelector("#mainElement")!.innerHTML = mainSvg;
     })();
@@ -122,8 +123,6 @@
   });
 
   $effect(() => {
-    $inspect("cambiamento 1", wantedNucleiTematici);
-    $inspect("cambiamento 2", wantedMaterie);
     generateMermaidCollegamenti();
   });
 </script>
