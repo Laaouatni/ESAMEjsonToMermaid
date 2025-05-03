@@ -109,12 +109,12 @@
       },
       MECCANICA: {
         "GESTIONE DELLA PRODUZIONE": [
-          "Studio del Layout deve essere particolare anche per evitare incidenti oltre a massimizzare la produzione."
-        ]
+          "Studio del Layout deve essere particolare anche per evitare incidenti oltre a massimizzare la produzione.",
+        ],
       },
       MOTORIA: {
-        "SICUREZZA": [""],
-        "ALIMENTAZIONE": [""],
+        SICUREZZA: [""],
+        ALIMENTAZIONE: [""],
         "SISTEMA CARDIOCIRCOLATORIO": [
           "magari collegandolo con IL CALCIO (sport fa bene alla salute)",
         ],
@@ -131,48 +131,124 @@
         ],
       },
     },
+    "LAVORO, INDUSTRIA E INNOVAZIONE": {
+      ITALIANO: {
+        FUTURISMO: [
+          "il futurismo voleva differenziarsi dal passato per questo a volte usavano al posto della punteggiatura SIMBOLI MATEMATICI.",
+          "La catena di montaggio di Ford introduce ALIENAZIONE che si collega con PIRANDELLO Quaderni di Serafino Gubbio operatore",
+        ],
+        "GABRIELE D'ANNUNZIO": [
+          "Nascita Fiat 1899: GABRIELE D’ANNUNZIO -> “L’automobile è femmina”",
+        ],
+        "ITALO SVEVO": [
+          "Finale della coscienza di Zeno dove si critica il positivismo: La scienza risolve tanti problemi quotidiani ma può paradossalmente portare alla distruzione dell’umanità.",
+          "momento di serenità e silenzio letterario quando si era sposato con la cugina Livia Veneziani. Livia Veneziani aveva un padre che possedeva un azienda. Di conseguenza dopo essersi sposato non lavora più nella UnionBank dove aveva lavorato per ben 19 anni ma GESTISCE L’INDUSTRIA DEL PADRE DELLA MOGLIE. Dopo questa situazione abbandona la letteratura dal 1898 fino al 1917. ANNO IN CUI LA PRODUZIONE PASSA A DIVENTARE QUELLA DELLE ARMI SOTTO LA RICHIESTA DELLO STATO. Un famoso commento/lettera che ha scritto è che ''ho una famiglia, un'azienda, una figlia, … dobbiamo diventare seri''",
+        ],
+      },
+      STORIA: {
+        "SECONDA RIVOLUZIONE INDUSTRIALE": [
+          "Energia elettrica <-> es. simbolo progresso industriale",
+          "Se parto da Matematica Curva di KEELING (CO2) posso dire che la curva inizia a diventare crescente quando avviene la PRIMA RIVOLUZIONE INDUSTRIALE (però visto che abbiamo fatto la 2 RIVOLUZIONE INDUSTRIALE, inizia con una comparazione veloce la 1 RIV poi parla solo della 2 RIV INDUSTRIALE)",
+        ],
+        "PRIMA GUERRA MONDIALE": [
+          "1° volta nella storia si utilizzano i carro armati",
+          "Le donne nell'industria mentre i soldati erano in guerra nelle trincee collegamento con i limiti e funzioni esponenziali tramite l’utilizzo: FORMULA NUMERO GIRI “G96” TORNIO visto che molto probabilmente le armi sono state prodotte con il tornio",
+        ],
+        "USA - CROLLO DELLA BORSA DI WALL STREET": [
+          "USA - RUGGENTI ANNI VENTI ('23 e '29): Ford - Catena di Montaggio - si passa da 14 ore a 10 min",
+        ],
+        FASCISMO: [
+          "FIOM vs C.G.I. (Industriali) e la politica del 5° GOVERNO DI GIOLITTI nel risolvere questa situazione aumentando i salariati dei lavoratori… successivamente gli industriali sentendosi deboli, investono nel fascismo, e continua da qui…",
+        ],
+      },
+      MATEMATICA: {
+        "FORMULA NUMERI GIRI G96 DEL TORNIO": [
+          "collegamento con i limiti e funzioni esponenziali tramite l'utilizzo: FORMULA NUMERO GIRI “G96” TORNIO visto che molto probabilmente le armi sono state prodotte con il tornio",
+        ],
+        "CURVA DI KEELING": [
+          "Dopo la prima rivoluzione industriale si aggiunge al “respiro della terra” anche un processo di origine antropica (umana) rendendo la funzione ESPONENZIALE CICLICA",
+        ],
+      },
+      INGLESE: {
+        "FONTI RINNOVABILI E NON RINNOVABILI": [""],
+        "MANUFACTURING OPERATIONS": [
+          "LATHE, MILLING OPERATIONS specialmente CNC come INNOVAZIONE",
+        ],
+        COKETOWN: [
+          "(fiume viola, mattoni rossi che diventano neri a causa della polvere, motori grandi simili a elefanti)",
+        ],
+        CAD: [""],
+      },
+      MECCANICA: {
+        STATISTICA: [
+          "FORD: INNOVAZIONE utilizzo sempre maggiore della STATISTICA",
+        ],
+        "TIPOLOGIA PLACCHETTE UTENSILI": ["collegamento con l'INDUSTRIA"],
+        "ADDITIVE MANUFACTURING": ["collegamento con l'INNOVAZIONE"],
+        "GESTIONE DELLA PRODUZIONE": [
+          "Magari collegandola con Italiano, in particolare con Italo Svevo perché Nel 1917 l'azienda del padre della moglie/cugina Livia Veneziani sarà riconvertita sotto l'ordine dello stato Austriaco per produrre le Armi… Questa data è molto importante perché segna la fine del periodo di Silenzio Letterario. Dopo 2 anni a questa data viene pubblicato il suo 3° Romanzo La Coscienza di Zeno grazie ai complimenti del suo prof di inglese Joyce e grazie anche alla sua località geografica Trieste, una città compresa fra Italia e l'Austria.",
+        ],
+      },
+      MOTORIA: {
+        "COSTRUZIONE STADIO QATAR 2022": [
+          "STADIUM 974: primo stadio che si può smontare facilmente visto che è costruito con containers -> COSTRUZIONE STADIO ECOSOSTENIBILE MONDIALE 2022 QATAR",
+        ],
+      },
+    },
   };
 </script>
 
-<!-- SALUTE E SICUREZZA
-VERGA -> ROSSO MALPELO
+<!-- INDUSTRIA E INNOVAZIONE/LAVORO
+FUTURISMO: il futurismo voleva differenziarsi dal passato per questo a volte usavano al posto della punteggiatura SIMBOLI MATEMATICI.
 
-VERGA -> NEDDA (Padre era morto di Malaria… facilmente collegabile in storia con il 3 GOVERNO GIOLITTI E IL SUO “CHININO” ANTI-MALARIA”)
+FUTURISMO: La catena di montaggio di Ford introduce ALIENAZIONE che si collega con PIRANDELLO Quaderni di Serafino Gubbio operatore 
 
-EMILE ZOLA -> ASSOMOIR. incidente sul lavoro del marito di Gervaise che lo avvicina all'alcool.
+Nascita Fiat 1899: GABRIELE D’ANNUNZIO -> “L’automobile è femmina”
 
-UNGARETTI -> Padre morto nella costruzione del canale di suez
+ITALO SVEVO -> Finale della coscienza di Zeno dove si critica il positivismo:
+La scienza risolve tanti problemi quotidiani ma può paradossalmente portare alla distruzione dell’umanità.
 
-PIRANDELLO -> Quaderni di Serafino Gubbio operatore -> Salute mentale dei lavoratori
+ITALO SVEVO -> momento di serenità e silenzio letterario quando si era sposato con la cugina Livia Veneziani. Livia Veneziani aveva un padre che possedeva un azienda. Di conseguenza dopo essersi sposato non lavora più nella UnionBank dove aveva lavorato per ben 19 anni ma GESTISCE L’INDUSTRIA DEL PADRE DELLA MOGLIE. Dopo questa situazione abbandona la letteratura dal 1898 fino al 1917. ANNO IN CUI LA PRODUZIONE PASSA A DIVENTARE QUELLA DELLE ARMI SOTTO LA RICHIESTA DELLO STATO. Un famoso commento/lettera che ha scritto è che “ho una famiglia, un'azienda, una figlia, … dobbiamo diventare seri"
+SECONDA RIVOLUZIONE INDUSTRIALE: Energia elettrica <-> es. simbolo progresso industriale
 
-PASCOLI -> X AGOSTO - la rondine porta del cibo ai proprio rondini OPPURE si parla del fuori come pericolo mentre la casa è sicurezza
+1 GUERRA MONDIALE: 1° volta nella storia si utilizzano i carro armati
 
-UNGARETTI -> NATALE - si parla di caldo buono e caldo cattivo
+USA - RUGGENTI ANNI VENTI (‘23 e ‘29): Ford - Catena di Montaggio - si passa da 14 ore a 10 min
 
-SABA -> GOAL - il calcio fa bene alla salute umana
-UNITÀ D’ITALIA -> Cassa nazionale -> aiuto infortunati sul lavoro
+FASCISMO: FIOM vs C.G.I. (Industriali) e la politica del 5° GOVERNO DI GIOLITTI nel risolvere questa situazione aumentando i salariati dei lavoratori… successivamente gli industriali sentendosi deboli, investono nel fascismo, e continua da qui…
 
-ETà GIOLITTIANA -> 3° GOVERNO - Gratis medicinale “CHININO” contro la Malaria
+Se parto da Matematica Curva di KEELING (CO2) posso dire che la curva inizia a diventare crescente quando avviene la PRIMA RIVOLUZIONE INDUSTRIALE (però visto che abbiamo fatto la 2 RIVOLUZIONE INDUSTRIALE, inizia con una comparazione veloce la 1 RIV poi parla solo della 2 RIV INDUSTRIALE)
 
-RIVOLUZIONE RUSSA -> Il figlio dello Zar Nicola 2 di nome Alessio era malato di EMOFILIA quindi continue Emorragie
+1 GUERRA MONDIALE: Le donne nell'industria mentre i soldati erano in guerra nelle trincee
+collegamento con i limiti e funzioni esponenziali tramite l’utilizzo:
+FORMULA NUMERO GIRI “G96” TORNIO
+visto che molto probabilmente le armi sono state prodotte con il tornio
 
-NAZISMO: I malati mentali oppure con malattie ereditarie venivano uccisi per proteggere la razza Ariana
-AlCOOL: Curva di Widmark (partendo da ITA Assommoir)
+il futurismo voleva differenziarsi dal passato per questo a volte usavano al posto della punteggiatura SIMBOLI MATEMATICI.
 
-Crescita popolazione di batteri
+CURVA DI KEELING -> Dopo la prima rivoluzione industriale si aggiunge al “respiro della terra” anche un processo di origine antropica (umana) rendendo la funzione ESPONENZIALE CICLICA
+METALLI FERROSI E NON FERROSI
 
-Il grafico del Covid Che ha una crescita, una fase di stabilimento e poi una decrescita.
+LATHE, MILLING OPERATIONS specialmente CNC come INNOVAZIONE
 
-Somministrazione di un farmaco nel sangue (meglio usare ALCOOL E LA CURVA DI WIDMARK)
-RISK - SICUREZZA
-INDUSTRIA: GESTIONE DELLA PRODUZIONE -> Studio del Layout deve essere particolare anche per evitare incidenti oltre a massimizzare la produzione.
-SICUREZZA
+“COKETOWN” (fiume viola, mattoni rossi che diventano neri a causa della polvere, motori grandi simili a elefanti)
 
-ALIMENTAZIONE
+CAD
+FORD: INNOVAZIONE utilizzo sempre maggiore della STATISTICA
 
-SISTEMA CARDIOCIRCOLATORIO magari collegandolo con IL CALCIO (sport fa bene alla salute)
-Agenda 2030 PUNTO 2,3,6 
+INDUSTRIA: TIPOLOGIA PLACCHETTE UTENSILI
 
-SICUREZZA TRIPODI - EN510 - abbigliamento antimpigliamento per le lavorazioni meccaniche
+INNOVAZIONE: ADDITIVE MANUFACTURING
+
+INDUSTRIA: GESTIONE DELLA PRODUZIONE
+(Magari collegandola con Italiano, in particolare con Italo Svevo perché Nel 1917 l'azienda del padre della moglie/cugina Livia Veneziani sarà riconvertita sotto l'ordine dello stato Austriaco per produrre le Armi… Questa data è molto importante perché segna la fine del periodo di Silenzio Letterario. Dopo 2 anni a questa data viene pubblicato il suo 3° Romanzo La Coscienza di Zeno grazie ai complimenti del suo prof di inglese Joyce e grazie anche alla sua località geografica Trieste, una città compresa fra Italia e l’Austria.
+STADIUM 974: primo stadio che si può smontare facilmente visto che è costruito con containers -> COSTRUZIONE STADIO ECOSOSTENIBILE MONDIALE 2022 QATAR
+COSTITUZIONE ART 1: L’Italia è una repubblica fondata sul lavoro, …
+
+Le donne nel lavoro durante 1 guerra mondiale
+
+Agenda 2030 PUNTO 9,12
+
+SICUREZZA TRIPODI - EN510 - abbigliamento antimpigliamento per le lavorazioni meccaniche NELLE INDUSTRIE
 
 SICUREZZA TRIPODI in generale (Rischio meccanico, CE, Dlgs81/08, cosa una macchina, pericoli, figure della sicurezza) -->
