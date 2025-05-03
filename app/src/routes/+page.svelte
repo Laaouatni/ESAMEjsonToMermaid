@@ -7,8 +7,8 @@
     }
   };
 
-  const COLLEGAMENTI = {
-
+  const COLLEGAMENTI: TypeCollegamenti = {
+    
   }
 
 
