@@ -1,17 +1,7 @@
 <script lang="ts">
   import type {
-    TypeMaterie,
-    TypeArgomenti,
-    TypeNucleiTematici,
+    TypeCollegamenti
   } from "$lib/types/typeConstants";
-
-  type TypeCollegamenti = {
-    [thisTypeNucleoTematico in TypeNucleiTematici]: {
-      [thisTypeMateria in TypeMaterie]: {
-        [thisTypeArgomento in TypeArgomenti<thisTypeMateria>]: string[];
-      }[];
-    };
-  };
 
   const COLLEGAMENTI: TypeCollegamenti = {
     "AMBIENTE E ENERGIA": {

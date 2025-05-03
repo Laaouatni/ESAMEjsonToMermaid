@@ -8,4 +8,12 @@ type TypeArgomenti<TypeThisMateria extends TypeMaterie> =
   (typeof LISTA_ARGOMENTI)[TypeThisMateria][number];
 type TypeNucleiTematici = (typeof LISTA_NUCLEI_TEMATICI)[number];
 
-export type { TypeMaterie, TypeArgomenti, TypeNucleiTematici };
+type TypeCollegamenti = {
+  [thisTypeNucleoTematico in TypeNucleiTematici]: {
+    [thisTypeMateria in TypeMaterie]: {
+      [thisTypeArgomento in TypeArgomenti<thisTypeMateria>]: string[];
+    }[];
+  };
+};
+
+export type { TypeMaterie, TypeArgomenti, TypeNucleiTematici, TypeCollegamenti };
