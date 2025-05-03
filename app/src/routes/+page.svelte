@@ -57,8 +57,8 @@
               argomento: idToGetArgomenti[thisArgomento],
               nucleoTematico: idToGetTematica[thisNucleoTematico]
             }
-            result += myString(`${thisIds.argomento}-->|"${thisSpiegazione.replace("\"", "'")}"|${thisIds.nucleoTematico}`)
-
+            // result += myString(`${thisIds.argomento}-->|"${thisSpiegazione.replace(/"/g, "'")}"|${thisIds.nucleoTematico}`)
+            result += myString(`${thisIds.argomento}-->${thisIds.nucleoTematico}`)
           })
         })
       })
