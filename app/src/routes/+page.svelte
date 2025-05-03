@@ -36,18 +36,22 @@
       },
       MATEMATICA: {
         "CURVA DI KEELING": [
-          "Dopo la prima rivoluzione industriale si aggiunge al “respiro della terra” anche un processo di origine antropica (umana) rendendo la funzione ESPONENZIALE CICLICA"
-        ]
+          "Dopo la prima rivoluzione industriale si aggiunge al “respiro della terra” anche un processo di origine antropica (umana) rendendo la funzione ESPONENZIALE CICLICA",
+        ],
       },
       INGLESE: {
-        "FONTI RINNOVABILI E NON RINNOVABILI": [""]
+        "FONTI RINNOVABILI E NON RINNOVABILI": [""],
       },
       MECCANICA: {
-        "ADDITIVE MANUFACTURING": ["ADDITIVE MANUFACTURING non crea trucioli quindi è ECOSOSTENIBILE"],
+        "ADDITIVE MANUFACTURING": [
+          "ADDITIVE MANUFACTURING non crea trucioli quindi è ECOSOSTENIBILE",
+        ],
         "TRATTAMENTI TERMICI": ["TRATTAMENTI TERMICI richiedono ENERGIA"],
       },
       MOTORIA: {
-        "COSTRUZIONE STADIO QATAR 2022": ["COSTRUZIONE STADIO ECOSOSTENIBILE MONDIALE 2022 QATAR -> Stadio riutilizzabile STADIUM 974, inoltre, rispetto ai altri stadi costruiti questo NON HA BISOGNO DI CONDIZIONATORI"]
+        "COSTRUZIONE STADIO QATAR 2022": [
+          "COSTRUZIONE STADIO ECOSOSTENIBILE MONDIALE 2022 QATAR -> Stadio riutilizzabile STADIUM 974, inoltre, rispetto ai altri stadi costruiti questo NON HA BISOGNO DI CONDIZIONATORI",
+        ],
       },
       EDUCAZIONE_CIVICA: {
         "AGENDA 2030": [
@@ -59,11 +63,116 @@
           "PUNTO 15: VITA SULLA TERRA",
         ],
         "RICICLO ALLUMINIO": ["powerpoint grossi"],
-        "RAEE": ["RAEE (RIFIUTI ELETTRICI) - Polito Powerpoint"]
-      }
+        RAEE: ["RAEE (RIFIUTI ELETTRICI) - Polito Powerpoint"],
+      },
     },
     "SALUTE E SICUREZZA": {
-      
-    }
+      ITALIANO: {
+        VERGA: [
+          "VERGA -> ROSSO MALPELO",
+          "VERGA -> NEDDA (Padre era morto di Malaria… facilmente collegabile in storia con il 3 GOVERNO GIOLITTI E IL SUO “CHININO” ANTI-MALARIA”)",
+        ],
+        "EMILE ZOLA": [
+          "EMILE ZOLA -> ASSOMOIR. incidente sul lavoro del marito di Gervaise che lo avvicina all'alcool.",
+        ],
+        UNGARETTI: [
+          "Padre morto nella costruzione del canale di suez",
+          "NATALE - si parla di caldo buono e caldo cattivo",
+        ],
+        PIRANDELLO: [
+          "PIRANDELLO -> Quaderni di Serafino Gubbio operatore -> Salute mentale dei lavoratori",
+        ],
+        PASCOLI: [
+          "PASCOLI -> X AGOSTO - la rondine porta del cibo ai proprio rondini OPPURE si parla del fuori come pericolo mentre la casa è sicurezza",
+        ],
+        SABA: ["SABA -> GOAL - il calcio fa bene alla salute umana"],
+      },
+      STORIA: {
+        "UNITA D'ITALIA": ["Cassa nazionale -> aiuto infortunati sul lavoro"],
+        "ETA GIOLITTIANA": [
+          "3° GOVERNO - Gratis medicinale “CHININO” contro la Malaria",
+        ],
+        "RIVOLUZIONE RUSSA": [
+          "Il figlio dello Zar Nicola 2 di nome Alessio era malato di EMOFILIA quindi continue Emorragie",
+        ],
+        NAZISMO: [
+          "I malati mentali oppure con malattie ereditarie venivano uccisi per proteggere la razza Ariana",
+        ],
+      },
+      MATEMATICA: {
+        "CURVA DI WIDMARK": ["CURVA DEL ALCOOL, partendo da ITA Assommoir"],
+        "CRESCITA POPOLAZIONE BATTERI": [""],
+        "SOMMINISTRAZIONE DI UN FARMACO NEL SANGUE": [""],
+      },
+      INGLESE: {
+        RISK: [""],
+      },
+      MECCANICA: {
+        "GESTIONE DELLA PRODUZIONE": [
+          "Studio del Layout deve essere particolare anche per evitare incidenti oltre a massimizzare la produzione."
+        ]
+      },
+      MOTORIA: {
+        "SICUREZZA": [""],
+        "ALIMENTAZIONE": [""],
+        "SISTEMA CARDIOCIRCOLATORIO": [
+          "magari collegandolo con IL CALCIO (sport fa bene alla salute)",
+        ],
+      },
+      EDUCAZIONE_CIVICA: {
+        "AGENDA 2030": [
+          "PUNTO 2: SCONFIGGERE LA FAME",
+          "PUNTO 3: SALUTE E BENESSERE",
+          "PUNTO 6: ACQUA PULITA E SERVIZI IGIENICO-SANITARI",
+        ],
+        "SICUREZZA TRIPODI": [
+          "EN510 - abbigliamento antimpigliamento per le lavorazioni meccaniche",
+          "in generale (Rischio meccanico, CE, Dlgs81/08, cosa una macchina, pericoli, figure della sicurezza)",
+        ],
+      },
+    },
   };
 </script>
+
+<!-- SALUTE E SICUREZZA
+VERGA -> ROSSO MALPELO
+
+VERGA -> NEDDA (Padre era morto di Malaria… facilmente collegabile in storia con il 3 GOVERNO GIOLITTI E IL SUO “CHININO” ANTI-MALARIA”)
+
+EMILE ZOLA -> ASSOMOIR. incidente sul lavoro del marito di Gervaise che lo avvicina all'alcool.
+
+UNGARETTI -> Padre morto nella costruzione del canale di suez
+
+PIRANDELLO -> Quaderni di Serafino Gubbio operatore -> Salute mentale dei lavoratori
+
+PASCOLI -> X AGOSTO - la rondine porta del cibo ai proprio rondini OPPURE si parla del fuori come pericolo mentre la casa è sicurezza
+
+UNGARETTI -> NATALE - si parla di caldo buono e caldo cattivo
+
+SABA -> GOAL - il calcio fa bene alla salute umana
+UNITÀ D’ITALIA -> Cassa nazionale -> aiuto infortunati sul lavoro
+
+ETà GIOLITTIANA -> 3° GOVERNO - Gratis medicinale “CHININO” contro la Malaria
+
+RIVOLUZIONE RUSSA -> Il figlio dello Zar Nicola 2 di nome Alessio era malato di EMOFILIA quindi continue Emorragie
+
+NAZISMO: I malati mentali oppure con malattie ereditarie venivano uccisi per proteggere la razza Ariana
+AlCOOL: Curva di Widmark (partendo da ITA Assommoir)
+
+Crescita popolazione di batteri
+
+Il grafico del Covid Che ha una crescita, una fase di stabilimento e poi una decrescita.
+
+Somministrazione di un farmaco nel sangue (meglio usare ALCOOL E LA CURVA DI WIDMARK)
+RISK - SICUREZZA
+INDUSTRIA: GESTIONE DELLA PRODUZIONE -> Studio del Layout deve essere particolare anche per evitare incidenti oltre a massimizzare la produzione.
+SICUREZZA
+
+ALIMENTAZIONE
+
+SISTEMA CARDIOCIRCOLATORIO magari collegandolo con IL CALCIO (sport fa bene alla salute)
+Agenda 2030 PUNTO 2,3,6 
+
+SICUREZZA TRIPODI - EN510 - abbigliamento antimpigliamento per le lavorazioni meccaniche
+
+SICUREZZA TRIPODI in generale (Rischio meccanico, CE, Dlgs81/08, cosa una macchina, pericoli, figure della sicurezza) -->
