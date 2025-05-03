@@ -53,7 +53,11 @@
         Object.entries(thisMateriaArgomentiObject ?? {}).forEach(([thisArgomento, thisArgomentoSpiegazioniArray]) => {
           thisArgomentoSpiegazioniArray?.forEach((thisSpiegazione) => {
             if(thisSpiegazione == "") return;
-            result += myString(`thisArgomento-->|thisSpiegazione|thisNucleoTematico`)
+            const thisIds = {
+              argomento: idToGetArgomenti[thisArgomento],
+              nucleoTematico: idToGetTematica[thisNucleoTematico]
+            }
+            result += myString(`${thisIds.argomento}-->|"${thisSpiegazione.replace("\"", "'")}"|${thisIds.nucleoTematico}`)
 
           })
         })
