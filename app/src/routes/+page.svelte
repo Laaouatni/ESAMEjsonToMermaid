@@ -54,29 +54,29 @@
       if(wantedNucleiTematici[thisNucleoTematico]) return thisNucleoTematico;
     })
 
-    result += myString("subgraph NUCLEI_TEMATICI['NUCLEI TEMATICI']");
+    result += myString("subgraph NUCLEI_TEMATICI[NUCLEI TEMATICI]");
     indentationNumber++;
     thisListaNucleiTematici.forEach(
       (thisNucleoTematico, thisNucleoTematicoIndex) => {
         const thisNucleoTematicoId = `TEMATICA_${thisNucleoTematicoIndex}`;
         idToGetTematica[thisNucleoTematico] = thisNucleoTematicoId;
-        result += myString(`${thisNucleoTematicoId}['${thisNucleoTematico}']`);
+        result += myString(`${thisNucleoTematicoId}[${thisNucleoTematico}]`);
       },
     );
     indentationNumber--;
     result += myString("end\n");
-    result += myString("subgraph MATERIE['MATERIE']");
+    result += myString("subgraph MATERIE[MATERIE]");
     indentationNumber++;
     thisWantedMaterie.forEach((thisMateria, thisMateriaIndex) => {
       const thisMateriaId = `MATERIA_${thisMateriaIndex}`;
       idToGetMateria[thisMateria] = thisMateriaId;
-      result += myString(`subgraph ${thisMateriaId}['${thisMateria}']`);
+      result += myString(`subgraph ${thisMateriaId}[${thisMateria}]`);
       indentationNumber++;
       (thisListaArgomenti[thisMateria] || []).forEach(
         (thisArgomento, thisArgomentoIndex) => {
           const thisArgomentoId = `MATERIA_${thisMateriaIndex}__ARGOMENTO_${thisArgomentoIndex}`;
           idToGetArgomenti[thisArgomento] = thisArgomentoId;
-          result += myString(`${thisArgomentoId}['${thisArgomento}']`);
+          result += myString(`${thisArgomentoId}[${thisArgomento}]`);
         },
       );
       indentationNumber--;
