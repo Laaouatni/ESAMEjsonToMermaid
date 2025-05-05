@@ -223,7 +223,7 @@ const LISTA_COLLEGAMENTI: TypeCollegamenti = {
         "UNGARETTI: 2°FASE POETICA (la prima era quella delle liriche di guerra) Durante la seconda fase ha avuto una crisi religiosa riflettendo sul dolore e il TEMPO scrivendo per esempio il SENTIMENTO DEL TEMPO",
         "UNGARETTI: VITA D'UOMO - tutte le poesie di ungaretti in un libro (pubblicato dalla Mondadori)",
         "UNGARETTI: se inizio con storia parlando della partita di calcio (tregua di natale del 1914) potrei collegarla facilmente con NATALE visto che entrambi hanno il sostantivo “NATALE” e poi avvengono nella 1 guerra mondiale (in anni diversi ma sempre nella 1 guerra mondiale)",
-        "in generale qualsiasi poesia fatta dell'Allegria (Veglia, Natale, Soldati, Sono una creatura) perchè contiene il LUOGO e la data all’inizio di ogni poesia breve -> anche se da preferirsi SONO UNA CREATURA.",
+        "in generale qualsiasi poesia fatta dell'Allegria (Veglia, Natale, Soldati, Sono una creatura) perchè contiene il luogo e la DATA all’inizio di ogni poesia breve -> anche se da preferirsi SOLDATI.",
       ],
       PIRANDELLO: [
         "PIRANDELLO: NOVELLE PER UN ANNO - Opera scritta ogni giorno per un anno, però purtroppo non conclusa perché muore prima (225/365)",
